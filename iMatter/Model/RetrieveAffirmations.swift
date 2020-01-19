@@ -14,7 +14,7 @@ class RetrieveAffirmations{
         
         var returnArray : [AffirmationData] = [AffirmationData]()
                 
-        let url = URL(string: "https://hipstatronic.com/audioAPI.json")
+        let url = URL(string: "https://hipstatronic.com/apps/umatter/audioAPI.json")
         
         var request = URLRequest(url: url!)
         
@@ -74,29 +74,36 @@ class RetrieveAffirmations{
 
                         }
                         
-                    }else if apiPath == "builder_tracks"{
+                    }else if apiPath == "builder_positivity" || apiPath == "builder_motivation" || apiPath == "builder_anxiety" || apiPath == "builder_confidence"{
                         
                         
-                        //This is for the Affirmation Builder
-                        if let builderTracks = json["builder_tracks"] as? Array<Dictionary<String, Any>>{
+                        //TODO: Retrieve affirmation tracks depending on their category
+                        if let builderCategory = json["builder_tracks"] as? Dictionary<String, Any>{
                             
-//                            print("\n\n\(builderTracks)\n\n")
+                            //This is for the Affirmation Builder
+                            if let builderTracks = builderCategory[apiPath] as? Array<Dictionary<String, Any>>{
+                              
+                                for track in builderTracks{
 
-                            for track in builderTracks{
+                                    let safeId : String = track["id"] as! String
+                                    let safeTitle : String = track["title"] as! String
+                                    let safeAudio : String = track["audio"] as! String
 
-                                let safeId : String = track["id"] as! String
-                                let safeTitle : String = track["title"] as! String
-                                let safeAudio : String = track["audio"] as! String
+                                    let affirmationData = AffirmationData(id: safeId, title: safeTitle, audio: safeAudio)
 
-                                let affirmationData = AffirmationData(id: safeId, title: safeTitle, audio: safeAudio)
+                                    returnArray.append(affirmationData)
+                                    
+                                }
 
-                                returnArray.append(affirmationData)
+                            }else{
+                                completion("Unable to find Affirmation tracks", [])
+
                             }
-  
-                        }else{
-                            completion("Unable to find Affirmation tracks", [])
-
+                            
+                            
+                            
                         }
+                        
                         
                     }else if apiPath == "daily_5"{
                                           

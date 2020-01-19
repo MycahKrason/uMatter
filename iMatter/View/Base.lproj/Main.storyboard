@@ -418,7 +418,7 @@
                                             <segment title="Nature"/>
                                             <segment title="None"/>
                                         </segments>
-                                        <color key="selectedSegmentTintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedSegmentTintColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="segmentChanged:" destination="4B1-hA-HE4" eventType="valueChanged" id="fc5-kg-vJr"/>
                                         </connections>
@@ -432,10 +432,10 @@
                                 </constraints>
                             </stackView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcc-24-iUH">
-                                <rect key="frame" x="0.0" y="135" width="414" height="460"/>
+                                <rect key="frame" x="0.0" y="175" width="414" height="420"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c0I-TW-sKb">
-                                        <rect key="frame" x="0.0" y="4" width="414" height="452"/>
+                                        <rect key="frame" x="0.0" y="4" width="414" height="412"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -447,16 +447,35 @@
                                     <constraint firstAttribute="bottom" secondItem="c0I-TW-sKb" secondAttribute="bottom" constant="4" id="qKu-h6-40S"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-pf-oty">
+                                <rect key="frame" x="20" y="135" width="374" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="TVX-b7-b0J"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Positivity"/>
+                                    <segment title="Motivation"/>
+                                    <segment title="Anxiety"/>
+                                    <segment title="Confidence"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="affirmationCategorySegmentChanged:" destination="4B1-hA-HE4" eventType="valueChanged" id="kbi-aG-7D4"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zcc-24-iUH" firstAttribute="top" secondItem="nX1-YI-wtA" secondAttribute="bottom" constant="8" id="18H-Vt-LSL"/>
+                            <constraint firstItem="tkQ-lk-CPf" firstAttribute="trailing" secondItem="3Oe-pf-oty" secondAttribute="trailing" constant="20" id="2FD-qQ-v6h"/>
                             <constraint firstItem="3QA-af-qTD" firstAttribute="top" secondItem="UoI-sd-kQ2" secondAttribute="bottom" constant="8" id="4G5-O8-3al"/>
                             <constraint firstItem="3QA-af-qTD" firstAttribute="top" secondItem="UoI-sd-kQ2" secondAttribute="bottom" constant="8" id="5A0-fN-UTl"/>
                             <constraint firstItem="tkQ-lk-CPf" firstAttribute="trailing" secondItem="DMa-lk-xB9" secondAttribute="trailing" id="6tU-mk-M33"/>
                             <constraint firstItem="DMa-lk-xB9" firstAttribute="top" secondItem="tkQ-lk-CPf" secondAttribute="top" id="Fbf-Po-ggR"/>
                             <constraint firstItem="UTr-nX-d62" firstAttribute="trailing" secondItem="tkQ-lk-CPf" secondAttribute="trailing" id="Hnf-bq-Zla"/>
+                            <constraint firstItem="3Oe-pf-oty" firstAttribute="leading" secondItem="tkQ-lk-CPf" secondAttribute="leading" constant="20" id="L7s-Om-JqD"/>
                             <constraint firstItem="UoI-sd-kQ2" firstAttribute="leading" secondItem="tkQ-lk-CPf" secondAttribute="leading" constant="20" id="Lij-kX-SAd"/>
+                            <constraint firstItem="zcc-24-iUH" firstAttribute="top" secondItem="3Oe-pf-oty" secondAttribute="bottom" constant="8" id="MQm-lc-jpT"/>
                             <constraint firstItem="zcc-24-iUH" firstAttribute="trailing" secondItem="tkQ-lk-CPf" secondAttribute="trailing" id="MnN-Fc-5ct"/>
                             <constraint firstItem="UTr-nX-d62" firstAttribute="leading" secondItem="tkQ-lk-CPf" secondAttribute="leading" id="Nur-gX-BAL"/>
                             <constraint firstItem="3QA-af-qTD" firstAttribute="bottom" secondItem="tkQ-lk-CPf" secondAttribute="bottom" constant="-8" id="Oxy-Gv-3dk"/>
@@ -472,12 +491,14 @@
                             <constraint firstItem="d03-gR-57v" firstAttribute="leading" secondItem="tkQ-lk-CPf" secondAttribute="leading" constant="20" id="nvl-OY-kDX"/>
                             <constraint firstItem="tkQ-lk-CPf" firstAttribute="trailing" secondItem="nX1-YI-wtA" secondAttribute="trailing" constant="20" id="uvm-WW-5fC"/>
                             <constraint firstItem="UoI-sd-kQ2" firstAttribute="top" secondItem="d03-gR-57v" secondAttribute="bottom" constant="8" id="xZ4-7b-zCM"/>
+                            <constraint firstItem="3Oe-pf-oty" firstAttribute="top" secondItem="nX1-YI-wtA" secondAttribute="bottom" constant="8" id="yAQ-pi-oNW"/>
                             <constraint firstItem="tkQ-lk-CPf" firstAttribute="trailing" secondItem="UoI-sd-kQ2" secondAttribute="trailing" constant="20" id="z2O-Uc-blD"/>
                             <constraint firstAttribute="bottom" secondItem="UTr-nX-d62" secondAttribute="bottom" id="z70-Gy-NbS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tkQ-lk-CPf"/>
                     </view>
                     <connections>
+                        <outlet property="affirmationCategorySegmentDisplay" destination="3Oe-pf-oty" id="N6Q-kY-cFN"/>
                         <outlet property="ambientPickerDisplay" destination="UoI-sd-kQ2" id="iS8-4b-ERI"/>
                         <outlet property="buildBtnDisplay" destination="9yR-oZ-QU8" id="QoS-Ai-iAO"/>
                         <outlet property="clearBtnDisplay" destination="EdG-8e-OBi" id="Ucm-Td-urW"/>
@@ -1203,7 +1224,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NNv-pA-gVG"/>
-        <segue reference="d2T-nB-Ima"/>
+        <segue reference="TMh-NZ-39k"/>
         <segue reference="crn-zF-Llv"/>
     </inferredMetricsTieBreakers>
 </document>

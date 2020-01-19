@@ -12,6 +12,7 @@ import CoreData
 class AffirmationBuilderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
+    @IBOutlet weak var affirmationCategorySegmentDisplay: UISegmentedControl!
     @IBOutlet weak var trackListTable: UITableView!
     @IBOutlet weak var buildBtnDisplay: UIButton!
     @IBOutlet weak var clearBtnDisplay: UIButton!
@@ -20,6 +21,7 @@ class AffirmationBuilderViewController: UIViewController,UITableViewDelegate, UI
     
     var trackList : [AffirmationData] = [AffirmationData]()
     var selectedTrackList : [SelectedAffirmation] = [SelectedAffirmation]()
+    var chosenAffirmationCategory = "builder_anxiety"
     
     var chosenAmbience : String = ""
     
@@ -46,16 +48,18 @@ class AffirmationBuilderViewController: UIViewController,UITableViewDelegate, UI
         clearBtnDisplay.layer.cornerRadius = 10
         ambientPickerDisplay.layer.cornerRadius = 10
         
-        //Set Font colors of Segment
+        //Set Font colors of Segments
         let selectedSegmentAttribute = [NSAttributedString.Key.foregroundColor: UIColor.white]
         segmentDisplay.setTitleTextAttributes(selectedSegmentAttribute, for: .selected)
+        affirmationCategorySegmentDisplay.setTitleTextAttributes(selectedSegmentAttribute, for: .selected)
         let normalSegmentAttribute = [NSAttributedString.Key.foregroundColor: UIColor.gray]
         segmentDisplay.setTitleTextAttributes(normalSegmentAttribute, for: .normal)
+        affirmationCategorySegmentDisplay.setTitleTextAttributes(normalSegmentAttribute, for: .normal)
         
         trackListTable.register(UINib(nibName: "CustomTrackCell", bundle: nil), forCellReuseIdentifier: "CustomTrackCell")
         
         //Based on the Recieved Category - I will grab differenct Affirmations
-        RetrieveAffirmations().getAffirmations(apiPath: "builder_tracks" ,completion: { error, result in
+        RetrieveAffirmations().getAffirmations(apiPath: chosenAffirmationCategory, completion: { error, result in
             
             print("\(result) - This is what is returned")
             
@@ -273,6 +277,47 @@ class AffirmationBuilderViewController: UIViewController,UITableViewDelegate, UI
         saveSelectedAffirmationsToCD()
         selectedTrackList.append(chosenAffirmation)
     }
+    
+    
+    
+    
+    
+    
+    
+    //TODO: refresh the Affirmation List
+    @IBAction func affirmationCategorySegmentChanged(_ sender: Any) {
+        
+        //Check which segment is chosen an use that information to decide the chosenAffirmationCategory
+        if affirmationCategorySegmentDisplay.selectedSegmentIndex == 0{
+            chosenAffirmationCategory = "builder_positivity"
+        }else if affirmationCategorySegmentDisplay.selectedSegmentIndex == 1{
+            chosenAffirmationCategory = "builder_motivation"
+        }else if affirmationCategorySegmentDisplay.selectedSegmentIndex == 2{
+            chosenAffirmationCategory = "builder_anxiety"
+        }else if affirmationCategorySegmentDisplay.selectedSegmentIndex == 3{
+            chosenAffirmationCategory = "builder_confidence"
+        }
+        
+        //Based on the Recieved Category - I will grab differenct Affirmations
+        RetrieveAffirmations().getAffirmations(apiPath: chosenAffirmationCategory, completion: { error, result in
+            
+            print("\(result) - This is what is returned")
+            
+            
+            self.trackList = result
+            DispatchQueue.main.async {
+                self.trackListTable.reloadData()
+                
+            }
+            
+        })
+        
+    }
+    
+    
+    
+    
+    
     
     @IBAction func segmentChanged(_ sender: Any) {
         
