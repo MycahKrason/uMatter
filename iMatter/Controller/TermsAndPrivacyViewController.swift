@@ -18,6 +18,8 @@ class TermsAndPrivacyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        informationDisplay.isUserInteractionEnabled = false
 
         if let title = receivedTitle{
             viewTitleDisplay.text = title
@@ -31,6 +33,10 @@ class TermsAndPrivacyViewController: UIViewController {
             }else if title == "Builder Info"{
                 
                 informationDisplay.text = "The Affirmation Builder allows you to customize your Affirmation tracks.\n\nWhen selecting the Affirmations you would like to include in your track, a number will appear on the right side of the Affirmation to indicate the order of which it will play. You can add or remove Affirmations by clicking on them.\n\nYou can also select the background ambience in your Affirmation track. Select the category, then select the specific audio to play on your track using the Picker Selection\n\nIf you would like to clear all of your selected Affirmations and start fresh, press the 'Clear' button. Be aware that you will not be able to recover your playlist once you clear it.\n\nWhen you are ready to build your custom track, press the 'Build' button."
+                
+            }else if title == "Article List"{
+                
+                informationDisplay.text = "All articles are from TinyBuddha.com"
                 
             }else if title == "Terms / Privacy Policy"{
                 

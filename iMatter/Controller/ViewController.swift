@@ -13,6 +13,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var articlesBtnDisplay: UIButton!
     @IBOutlet weak var affirmationsBtnDisplay: UIButton!
     @IBOutlet weak var affirmationsBuilderBtnDisplay: UIButton!
     @IBOutlet weak var daily5BtnDisplay: UIButton!
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         affirmationsBtnDisplay.layer.cornerRadius = 10
         affirmationsBuilderBtnDisplay.layer.cornerRadius = 10
         daily5BtnDisplay.layer.cornerRadius = 10
+        articlesBtnDisplay.layer.cornerRadius = 10
         
 //        centerAffirmation.text = "Always Remember\nYou Matter"
         

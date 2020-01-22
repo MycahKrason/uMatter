@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AffirmationBuilderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
+class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     @IBOutlet weak var affirmationCategorySegmentDisplay: UISegmentedControl!
@@ -21,7 +21,7 @@ class AffirmationBuilderViewController: UIViewController,UITableViewDelegate, UI
     
     var trackList : [AffirmationData] = [AffirmationData]()
     var selectedTrackList : [SelectedAffirmation] = [SelectedAffirmation]()
-    var chosenAffirmationCategory = "builder_anxiety"
+    var chosenAffirmationCategory = "builder_positivity"
     
     var chosenAmbience : String = ""
     

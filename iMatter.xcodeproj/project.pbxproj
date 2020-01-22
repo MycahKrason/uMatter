@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		57ACE0776BADE600FF0E1534 /* Pods_iMatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8310223E870DDE962D17337 /* Pods_iMatter.framework */; };
 		773584BE23D3850A0030FCBF /* ListOfAffirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584BD23D3850A0030FCBF /* ListOfAffirmations.swift */; };
+		773584E423D68A590030FCBF /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584E323D68A590030FCBF /* ArticleData.swift */; };
+		773584E623D68AA00030FCBF /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584E523D68AA00030FCBF /* ArticleXMLParser.swift */; };
+		773584E823D68C270030FCBF /* ArticlesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584E723D68C270030FCBF /* ArticlesListViewController.swift */; };
+		773584EB23D7DC5F0030FCBF /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584E923D7DC5F0030FCBF /* ArticleCell.swift */; };
+		773584EC23D7DC5F0030FCBF /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773584EA23D7DC5F0030FCBF /* ArticleCell.xib */; };
+		773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */; };
+		773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */; };
 		774D0507236D1E450099426F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0506236D1E450099426F /* AppDelegate.swift */; };
 		774D0509236D1E450099426F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0508236D1E450099426F /* SceneDelegate.swift */; };
 		774D050B236D1E450099426F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D050A236D1E450099426F /* ViewController.swift */; };
@@ -44,6 +51,13 @@
 /* Begin PBXFileReference section */
 		0D9A06F3DE96CA9822847A95 /* Pods-iMatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMatter.release.xcconfig"; path = "Target Support Files/Pods-iMatter/Pods-iMatter.release.xcconfig"; sourceTree = "<group>"; };
 		773584BD23D3850A0030FCBF /* ListOfAffirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAffirmations.swift; sourceTree = "<group>"; };
+		773584E323D68A590030FCBF /* ArticleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
+		773584E523D68AA00030FCBF /* ArticleXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleXMLParser.swift; sourceTree = "<group>"; };
+		773584E723D68C270030FCBF /* ArticlesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewController.swift; sourceTree = "<group>"; };
+		773584E923D7DC5F0030FCBF /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		773584EA23D7DC5F0030FCBF /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadCacheImage.swift"; sourceTree = "<group>"; };
+		773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDisplayViewController.swift; sourceTree = "<group>"; };
 		774D0503236D1E450099426F /* uMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774D0506236D1E450099426F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774D0508236D1E450099426F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +159,8 @@
 				779D25EF238387340049CB8D /* AffirmationData.swift */,
 				77B45F5523945D5A0067FE1C /* DataModel.xcdatamodeld */,
 				773584BD23D3850A0030FCBF /* ListOfAffirmations.swift */,
+				773584E323D68A590030FCBF /* ArticleData.swift */,
+				773584E523D68AA00030FCBF /* ArticleXMLParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +172,8 @@
 				779D25EA23837CF10049CB8D /* CustomAffirmationsCell.xib */,
 				77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */,
 				77CDAE06238E0DAD00B561DF /* CustomTrackCell.xib */,
+				773584E923D7DC5F0030FCBF /* ArticleCell.swift */,
+				773584EA23D7DC5F0030FCBF /* ArticleCell.xib */,
 				774D050C236D1E450099426F /* Main.storyboard */,
 			);
 			path = View;
@@ -172,6 +190,8 @@
 				77CDAE03238E06F900B561DF /* CustomAffirmationPlayerViewController.swift */,
 				77B45F5A23960F480067FE1C /* InAppSubscriptionModalViewController.swift */,
 				774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */,
+				773584E723D68C270030FCBF /* ArticlesListViewController.swift */,
+				773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				776246AC236D30C4003C2D6A /* AppDelegate+PushNotifications.swift */,
+				773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +302,7 @@
 				774F7D7D239C8203009A69D2 /* Summer.mp3 in Resources */,
 				774F7D7F239C8203009A69D2 /* CreativeMinds.mp3 in Resources */,
 				774F7D86239C8D6A009A69D2 /* Forest.mp3 in Resources */,
+				773584EC23D7DC5F0030FCBF /* ArticleCell.xib in Resources */,
 				7761CE2123D0FCB0008DE6DE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,17 +358,23 @@
 			files = (
 				774D050B236D1E450099426F /* ViewController.swift in Sources */,
 				774F7D8A239D76B3009A69D2 /* TermsAndPrivacyViewController.swift in Sources */,
+				773584E823D68C270030FCBF /* ArticlesListViewController.swift in Sources */,
 				779D25F0238387340049CB8D /* AffirmationData.swift in Sources */,
 				774D0507236D1E450099426F /* AppDelegate.swift in Sources */,
 				77B45F5723945D5A0067FE1C /* DataModel.xcdatamodeld in Sources */,
 				77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */,
 				779D25E823820FB40049CB8D /* AudioPlayerViewController.swift in Sources */,
+				773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */,
 				779D25E623820B030049CB8D /* AffirmationsListViewController.swift in Sources */,
+				773584E623D68AA00030FCBF /* ArticleXMLParser.swift in Sources */,
 				779D25EB23837CF10049CB8D /* CustomAffirmationsCell.swift in Sources */,
+				773584EB23D7DC5F0030FCBF /* ArticleCell.swift in Sources */,
 				774D0509236D1E450099426F /* SceneDelegate.swift in Sources */,
+				773584E423D68A590030FCBF /* ArticleData.swift in Sources */,
 				77CDAE02238A550800B561DF /* AffirmationBuilderViewController.swift in Sources */,
 				77CDAE04238E06F900B561DF /* CustomAffirmationPlayerViewController.swift in Sources */,
 				779D25EE238386640049CB8D /* RetrieveAffirmations.swift in Sources */,
+				773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */,
 				776246AD236D30C4003C2D6A /* AppDelegate+PushNotifications.swift in Sources */,
 				773584BE23D3850A0030FCBF /* ListOfAffirmations.swift in Sources */,
 				77B45F5B23960F480067FE1C /* InAppSubscriptionModalViewController.swift in Sources */,
