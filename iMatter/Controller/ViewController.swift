@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     var randomDaily5AudioString : String?
     var randomDaily5Title : String?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,20 +33,11 @@ class ViewController: UIViewController {
         
 //        centerAffirmation.text = "Always Remember\nYou Matter"
         
-        
         centerAffirmation.text = ListOfAffirmations().listOfAllAffirmations.randomElement()
         
-        //TODO: fade in the text
+        //fade in the text
         centerAffirmation.fadeIn()
-        // Do any additional setup after loading the view.
         
-        var testArray : [String] = ["one", "two", "three", "three"]
-        print(testArray.count)
-        
-        var setArray : Set = Set(testArray)
-        print(setArray)
-        
-         
     }
     
     @IBAction func daily5BtnPressed(_ sender: Any) {
@@ -55,8 +45,7 @@ class ViewController: UIViewController {
         //Check Payment
         if true{
             
-            //I need to pull all of the Daily 5 audio clips
-            //then choose one randomly based on the amount returned
+            //I need to pull all of the Daily 5 audio clips, then choose one randomly based on the amount returned
             RetrieveAffirmations().getAffirmations(apiPath: "daily_5" ,completion: { error,
                 result in
                 
@@ -76,12 +65,11 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "daily5ToIAP", sender: sender)
         }
         
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Need to grab random track from library
         
+        //Need to grab random track from library
         if segue.identifier == "toDaily5Player"{
             
             let destVC = segue.destination as! AudioPlayerViewController
@@ -89,21 +77,6 @@ class ViewController: UIViewController {
             destVC.audioTitle = randomDaily5Title
             
         }
-    }
-}
-
-extension UIView {
-    func fadeIn() {
-        // Move our fade out code from earlier
-        UIView.animate(withDuration: 1.3, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.alpha = 1.0 // Instead of a specific instance of, say, birdTypeLabel, we simply set [thisInstance] (ie, self)'s alpha
-            }, completion: nil)
-    }
-
-    func fadeOut() {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-            self.alpha = 0.0
-            }, completion: nil)
     }
 }
 

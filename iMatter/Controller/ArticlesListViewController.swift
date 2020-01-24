@@ -95,7 +95,6 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -123,6 +122,5 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
 
         }
     }
-    
     
 }

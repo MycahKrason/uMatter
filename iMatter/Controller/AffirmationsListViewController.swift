@@ -21,7 +21,6 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     //Context for Core Data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,9 +73,9 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     
     }
     
-    //******//
-    //Tables//
-    //******//
+    //************//
+    //MARK: Tables//
+    //************//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
@@ -103,7 +102,6 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
         }else{
             
             //this is specifically for Favorites
-            
             cell.favoriteBtnDisplay.image = UIImage(systemName: "circle.fill")
             
             //Set the title of the track and time
@@ -124,6 +122,7 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
             }else{
                 return favoritesArray.count
             }
+            
         }else{
             //Only return 2 if user is not paying
             return 5
@@ -160,7 +159,6 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
                     destVC.audioTitle = favoritesArray[indexPath.row].title
                 }
                 
-
             }
             
         }else if segue.identifier == "affirmationPlayListToInfo"{
@@ -202,8 +200,8 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
                 }
 
                 if favoriteMatch == true{
+                    
                     //If safeFavoriteMatch is true - then there is already a favorite, and you don't want to add another - but should instead delete it
-
                     affirmationsArray[indexPathClickedOn![1]].favorite = false
 
                     if let safeRemoveAtIndex = removeAtIndex{

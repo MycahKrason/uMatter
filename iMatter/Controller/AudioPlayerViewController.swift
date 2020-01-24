@@ -11,7 +11,6 @@ import AVFoundation
 
 class AudioPlayerViewController: UIViewController {
 
-
     @IBOutlet weak var audioScrubber: UISlider!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     @IBOutlet weak var playPauseImage: UIImageView!
@@ -27,7 +26,6 @@ class AudioPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Access the shared, singleton audio session instance
         let session = AVAudioSession.sharedInstance()
@@ -64,7 +62,6 @@ class AudioPlayerViewController: UIViewController {
             name: .AVPlayerItemNewAccessLogEntry,
             object: player?.currentItem)
             
-            
             let interval = CMTime(value: 1, timescale: 2)
             player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { [weak self] (progressTime) in
 
@@ -88,7 +85,6 @@ class AudioPlayerViewController: UIViewController {
 
     }
     
-    
     @objc func playerItemDidReadyToPlay(notification: Notification) {
             if let _ = notification.object as? AVPlayerItem {
                 // player is ready to play now!!
@@ -109,7 +105,6 @@ class AudioPlayerViewController: UIViewController {
             }
     }
     
-
     @objc func didPlayToEnd() {
         player?.seek(to: CMTimeMakeWithSeconds(0, preferredTimescale: 1))
         playPauseImage.image = UIImage(systemName: "play")
@@ -119,7 +114,6 @@ class AudioPlayerViewController: UIViewController {
 //        playPauseImage.image = UIImage(systemName: "pause")
         
     }
-    
     
     @IBAction func playPauseAudioClicked(_ sender: Any) {
     
@@ -137,8 +131,6 @@ class AudioPlayerViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-
     @IBAction func timeSliderAction(_ sender: Any) {
         
         let timeRange = self.player?.currentItem?.loadedTimeRanges[0].timeRangeValue

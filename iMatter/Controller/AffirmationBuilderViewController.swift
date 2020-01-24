@@ -106,13 +106,12 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
             print("Unable to Load Saved Favorite Artists - \(error)")
         }
         
-//        print(selectedTrackList)
-    
     }
     
-    //******//
-    //Picker//
-    //******//
+    
+    //************//
+    //MARK: Picker//
+    //************//
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -121,7 +120,6 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         //Check the segment selection to determine which array to use
-        
         // 0 = Music
         // 1 = Nature
         // 2 = None
@@ -185,9 +183,9 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
         
     }
     
-    //******//
-    //Tables//
-    //******//
+    //************//
+    //MARK: Tables//
+    //************//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = trackListTable.dequeueReusableCell(withIdentifier: "CustomTrackCell", for: indexPath) as! CustomTrackCell
@@ -278,13 +276,6 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
         selectedTrackList.append(chosenAffirmation)
     }
     
-    
-    
-    
-    
-    
-    
-    //TODO: refresh the Affirmation List
     @IBAction func affirmationCategorySegmentChanged(_ sender: Any) {
         
         //Check which segment is chosen an use that information to decide the chosenAffirmationCategory
@@ -313,11 +304,6 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
         })
         
     }
-    
-    
-    
-    
-    
     
     @IBAction func segmentChanged(_ sender: Any) {
         

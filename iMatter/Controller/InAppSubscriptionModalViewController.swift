@@ -16,7 +16,7 @@ class InAppSubscriptionModalViewController: UIViewController {
         super.viewDidLoad()
 
         monthlyInAppSubscriptionBtnDisplay.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
+        
     }
     @IBAction func inAppSubscriptionBtnPressed(_ sender: Any) {
         print("Clicked on Subscription")
@@ -42,6 +42,4 @@ class InAppSubscriptionModalViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-
 }

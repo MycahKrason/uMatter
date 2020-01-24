@@ -34,15 +34,11 @@ class RetrieveAffirmations{
             
             do{
                 
-                
                 if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String : Any] {
 
                     // Will need to determine Whether we are looking for
                     // affirmations_playlist
                     // builder_tracks
-                    
-                    
-                    
                     if apiPath == "positivity" || apiPath == "motivation" || apiPath == "anxiety"{
                         
                         print(apiPath)
@@ -100,10 +96,7 @@ class RetrieveAffirmations{
 
                             }
                             
-                            
-                            
                         }
-                        
                         
                     }else if apiPath == "daily_5"{
                                           
@@ -126,7 +119,6 @@ class RetrieveAffirmations{
 
                         }else{
 
-                            
                             completion("Unable to find Affirmation tracks", [])
 
                         }
@@ -135,8 +127,6 @@ class RetrieveAffirmations{
                     
                 }
                 
-                
-
             }catch let error{
                 
                 print(error)

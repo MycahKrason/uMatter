@@ -26,17 +26,12 @@ class CategoryAffirmationsViewController: UIViewController {
         favoritesBtnDisplay.layer.cornerRadius = 10
     }
     
-    
     @IBAction func categoryBtnSelected(_ sender: UIButton!) {
 
-//        print("\n\(sender.titleLabel?.text)\n")
-
         //create function that sets a variable to be transferred in perform segue, then perform the segue
-
         performSegue(withIdentifier: "toAffirmationsList", sender: sender)
 
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 

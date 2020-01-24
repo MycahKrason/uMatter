@@ -24,13 +24,10 @@ class ArticleDisplayViewController: UIViewController {
             articleWebView.load(myRequest)
         }
         
-        // Do any additional setup after loading the view.
-        
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-
 }

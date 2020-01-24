@@ -16,6 +16,7 @@
 		773584EC23D7DC5F0030FCBF /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 773584EA23D7DC5F0030FCBF /* ArticleCell.xib */; };
 		773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */; };
 		773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */; };
+		773584F723DA8F960030FCBF /* UIView+Fades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584F623DA8F960030FCBF /* UIView+Fades.swift */; };
 		774D0507236D1E450099426F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0506236D1E450099426F /* AppDelegate.swift */; };
 		774D0509236D1E450099426F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0508236D1E450099426F /* SceneDelegate.swift */; };
 		774D050B236D1E450099426F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D050A236D1E450099426F /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		773584EA23D7DC5F0030FCBF /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadCacheImage.swift"; sourceTree = "<group>"; };
 		773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDisplayViewController.swift; sourceTree = "<group>"; };
+		773584F623DA8F960030FCBF /* UIView+Fades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fades.swift"; sourceTree = "<group>"; };
 		774D0503236D1E450099426F /* uMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774D0506236D1E450099426F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774D0508236D1E450099426F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				776246AC236D30C4003C2D6A /* AppDelegate+PushNotifications.swift */,
 				773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */,
+				773584F623DA8F960030FCBF /* UIView+Fades.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				774F7D8A239D76B3009A69D2 /* TermsAndPrivacyViewController.swift in Sources */,
 				773584E823D68C270030FCBF /* ArticlesListViewController.swift in Sources */,
 				779D25F0238387340049CB8D /* AffirmationData.swift in Sources */,
+				773584F723DA8F960030FCBF /* UIView+Fades.swift in Sources */,
 				774D0507236D1E450099426F /* AppDelegate.swift in Sources */,
 				77B45F5723945D5A0067FE1C /* DataModel.xcdatamodeld in Sources */,
 				77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */,

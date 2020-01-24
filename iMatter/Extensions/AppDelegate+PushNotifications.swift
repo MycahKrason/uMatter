@@ -15,8 +15,6 @@ import FirebaseMessaging
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    
-    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         completionHandler()
@@ -30,7 +28,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         
     }
-    
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
@@ -62,12 +59,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 }
 
-
 extension AppDelegate: MessagingDelegate {
     
     func application(received remoteMessage: MessagingRemoteMessage) {
-
-        
+  
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {

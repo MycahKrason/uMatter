@@ -10,10 +10,8 @@ import UIKit
 
 let imageCache = NSCache<NSString, UIImage>()
 
-
 @objc extension UIImageView {
 
-    
     func imageFromServerURL(_ URLString: String) {
         
         self.image = nil

@@ -59,8 +59,6 @@ class ArticleXMLParser: NSObject, XMLParserDelegate{
         xmlText += string
     }
     
-    
-    
     func parse() -> [ArticleData]{
         xmlParser?.delegate = self
         xmlParser?.parse()
@@ -68,8 +66,6 @@ class ArticleXMLParser: NSObject, XMLParserDelegate{
     }
     
 }
-
-
 
 
 extension String {

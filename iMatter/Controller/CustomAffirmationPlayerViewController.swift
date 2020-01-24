@@ -84,11 +84,7 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
         //Get notified when done sliding
         affirmationSliderDisplay.addTarget(self, action: #selector(sliderDidEndSliding), for: [.touchUpInside, .touchUpOutside])
 
-        
-        // Do any additional setup after loading the view.
-    
     }
-    
     
     func playAffirmationTrack(){
         //Not exactly sure the reason for this - but the delegate needs to be called here instead of viewdidload
