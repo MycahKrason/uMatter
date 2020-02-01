@@ -14,12 +14,11 @@ class RetrieveAffirmations{
         
         var returnArray : [AffirmationData] = [AffirmationData]()
                 
-        let url = URL(string: "https://hipstatronic.com/apps/umatter/audioAPI.json")
+        let url = URL(string: Private().URL_FOR_AFFIRMATIONS)
         
         var request = URLRequest(url: url!)
         
         request.httpMethod = "GET"
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
@@ -39,7 +38,7 @@ class RetrieveAffirmations{
                     // Will need to determine Whether we are looking for
                     // affirmations_playlist
                     // builder_tracks
-                    if apiPath == "positivity" || apiPath == "motivation" || apiPath == "anxiety"{
+                    if apiPath == "positivity" || apiPath == "motivation" || apiPath == "anxiety" || apiPath == "confidence"{
                         
                         print(apiPath)
                         
@@ -73,7 +72,7 @@ class RetrieveAffirmations{
                     }else if apiPath == "builder_positivity" || apiPath == "builder_motivation" || apiPath == "builder_anxiety" || apiPath == "builder_confidence"{
                         
                         
-                        //TODO: Retrieve affirmation tracks depending on their category
+                        //Retrieve affirmation tracks depending on their category
                         if let builderCategory = json["builder_tracks"] as? Dictionary<String, Any>{
                             
                             //This is for the Affirmation Builder

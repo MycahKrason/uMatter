@@ -19,17 +19,17 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var segmentDisplay: UISegmentedControl!
     @IBOutlet weak var ambientPickerDisplay: UIPickerView!
     
-    var trackList : [AffirmationData] = [AffirmationData]()
-    var selectedTrackList : [SelectedAffirmation] = [SelectedAffirmation]()
-    var chosenAffirmationCategory = "builder_positivity"
+    private var trackList : [AffirmationData] = [AffirmationData]()
+    private var selectedTrackList : [SelectedAffirmation] = [SelectedAffirmation]()
+    private var chosenAffirmationCategory = "builder_positivity"
     
-    var chosenAmbience : String = ""
+    private var chosenAmbience : String = ""
     
-    var ambientMusicArray : [String] = ["Summer", "Better Days", "Creative Minds", "Acoustic Breeze"]
-    var ambientNatureArray : [String] = ["Forest", "Ocean", "Rain", "Fireplace"]
+    private var ambientMusicArray : [String] = ["Summer", "Better Days", "Creative Minds", "Acoustic Breeze"]
+    private var ambientNatureArray : [String] = ["Forest", "Ocean", "Rain", "Fireplace"]
     
     //Context for Core Data
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     override func viewDidLoad() {
@@ -88,7 +88,7 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     }
     
     //Save to Core Data
-    func saveSelectedAffirmationsToCD(){
+    fileprivate func saveSelectedAffirmationsToCD(){
         do {
             try context.save()
         } catch  {
@@ -97,7 +97,7 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     }
     
     //Load from Core Data
-    func loadSelectedAffirmationsFromCD(){
+    fileprivate func loadSelectedAffirmationsFromCD(){
         let request : NSFetchRequest<SelectedAffirmation> = SelectedAffirmation.fetchRequest()
         
         do {

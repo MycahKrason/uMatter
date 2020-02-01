@@ -13,7 +13,7 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var articleTableView: UITableView!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
-    var articleArray : [ArticleData] = [ArticleData]()
+    private var articleArray : [ArticleData] = [ArticleData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    //TODO: - Tables
+    //MARK: - Tables
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articleArray.count
     }
@@ -51,7 +51,7 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
         performSegue(withIdentifier: "articleListToArticleDisplay", sender: self)
     }
     
-    func retrieveArticleData(){
+    fileprivate func retrieveArticleData(){
             
 //        let url = URL(string: "http://rss.sciam.com/sciam/mind-and-brain")
         let url = URL(string: "https://tinybuddha.com/feed/")

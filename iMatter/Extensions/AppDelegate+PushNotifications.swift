@@ -12,7 +12,6 @@ import UserNotifications
 import FirebaseInstanceID
 import FirebaseMessaging
 
-
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

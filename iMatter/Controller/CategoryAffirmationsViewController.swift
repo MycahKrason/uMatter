@@ -15,7 +15,7 @@ class CategoryAffirmationsViewController: UIViewController {
     @IBOutlet weak var positivityBtnDisplay: UIButton!
     @IBOutlet weak var favoritesBtnDisplay: UIButton!
     
-    var categoryToSend : String = ""
+    private var categoryToSend : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

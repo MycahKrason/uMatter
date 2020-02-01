@@ -17,6 +17,7 @@
 		773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */; };
 		773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */; };
 		773584F723DA8F960030FCBF /* UIView+Fades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584F623DA8F960030FCBF /* UIView+Fades.swift */; };
+		77448A9723E11FA10029C567 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77448A9623E11FA10029C567 /* Private.swift */; };
 		774D0507236D1E450099426F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0506236D1E450099426F /* AppDelegate.swift */; };
 		774D0509236D1E450099426F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0508236D1E450099426F /* SceneDelegate.swift */; };
 		774D050B236D1E450099426F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D050A236D1E450099426F /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadCacheImage.swift"; sourceTree = "<group>"; };
 		773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDisplayViewController.swift; sourceTree = "<group>"; };
 		773584F623DA8F960030FCBF /* UIView+Fades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fades.swift"; sourceTree = "<group>"; };
+		77448A9623E11FA10029C567 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		774D0503236D1E450099426F /* uMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774D0506236D1E450099426F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774D0508236D1E450099426F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		77448A9523E11F8D0029C567 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				77448A9623E11FA10029C567 /* Private.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		774D04FA236D1E440099426F = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		774D0505236D1E450099426F /* iMatter */ = {
 			isa = PBXGroup;
 			children = (
+				77448A9523E11F8D0029C567 /* Private */,
 				77B45F4D239312290067FE1C /* Sounds */,
 				776246AB236D30A8003C2D6A /* Extensions */,
 				776246AA236D2917003C2D6A /* iMatter.entitlements */,
@@ -376,6 +387,7 @@
 				774D0509236D1E450099426F /* SceneDelegate.swift in Sources */,
 				773584E423D68A590030FCBF /* ArticleData.swift in Sources */,
 				77CDAE02238A550800B561DF /* AffirmationBuilderViewController.swift in Sources */,
+				77448A9723E11FA10029C567 /* Private.swift in Sources */,
 				77CDAE04238E06F900B561DF /* CustomAffirmationPlayerViewController.swift in Sources */,
 				779D25EE238386640049CB8D /* RetrieveAffirmations.swift in Sources */,
 				773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */,

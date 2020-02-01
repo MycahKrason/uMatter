@@ -19,25 +19,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var daily5BtnDisplay: UIButton!
     @IBOutlet weak var centerAffirmation: UILabel!
     
-    var daily5Array : [AffirmationData] = [AffirmationData]()
-    var randomDaily5AudioString : String?
-    var randomDaily5Title : String?
+    private var daily5Array : [AffirmationData] = [AffirmationData]()
+    private var randomDaily5AudioString : String?
+    private var randomDaily5Title : String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        layoutSetup()
+        
+    }
+    
+    fileprivate func layoutSetup() {
         affirmationsBtnDisplay.layer.cornerRadius = 10
         affirmationsBuilderBtnDisplay.layer.cornerRadius = 10
         daily5BtnDisplay.layer.cornerRadius = 10
         articlesBtnDisplay.layer.cornerRadius = 10
         
-//        centerAffirmation.text = "Always Remember\nYou Matter"
+        //        centerAffirmation.text = "Always Remember\nYou Matter"
         
         centerAffirmation.text = ListOfAffirmations().listOfAllAffirmations.randomElement()
         
         //fade in the text
         centerAffirmation.fadeIn()
-        
     }
     
     @IBAction func daily5BtnPressed(_ sender: Any) {

@@ -22,7 +22,7 @@ class AudioPlayerViewController: UIViewController {
     var stringURLRecieved : String?
     var audioTitle: String?
     
-    var player: AVPlayer?
+    private var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()

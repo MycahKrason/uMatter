@@ -19,13 +19,13 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
     @IBOutlet weak var currentAffirmationDisplay: UILabel!
     @IBOutlet weak var affirmationSliderDisplay: UISlider!
     
-    var currentAffirmationCount = 0
+    private var currentAffirmationCount = 0
     var receivedArray : [SelectedAffirmation] = [SelectedAffirmation]()
     var receivedAmbience : String?
-    var isOnRepeat = false
+    private var isOnRepeat = false
     
-    var affirmationPlayer: AVPlayer?
-    var ambiencePlayer: AVAudioPlayer?
+    private var affirmationPlayer: AVPlayer?
+    private var ambiencePlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +112,7 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
         
     }
     
-    func playAmbienceTrack(trackName: String){
+    fileprivate func playAmbienceTrack(trackName: String){
         
         
         let soundURL = Bundle.main.url(forResource: trackName, withExtension: "mp3")

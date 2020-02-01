@@ -15,11 +15,11 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var affirmationTableView: UITableView!
     
     var recievedCategory : String?
-    var affirmationsArray : [AffirmationData] = [AffirmationData]()
-    var favoritesArray : [FavoriteAffirmations] = [FavoriteAffirmations]()
+    private var affirmationsArray : [AffirmationData] = [AffirmationData]()
+    private var favoritesArray : [FavoriteAffirmations] = [FavoriteAffirmations]()
     
     //Context for Core Data
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     //Save to Core Data
-    func saveFavoriteAffirmationsToCD(){
+    fileprivate func saveFavoriteAffirmationsToCD(){
         do {
             try context.save()
         } catch  {
@@ -62,7 +62,7 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     //Load from Core Data
-    func loadFavoriteAffirmationsFromCD(){
+    fileprivate func loadFavoriteAffirmationsFromCD(){
         let request : NSFetchRequest<FavoriteAffirmations> = FavoriteAffirmations.fetchRequest()
         
         do {
@@ -245,7 +245,7 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
         
     }
     
-    func addAffirmationToFavorites(indexPath: IndexPath){
+    fileprivate func addAffirmationToFavorites(indexPath: IndexPath){
                 
         let favoriteAffirmation = FavoriteAffirmations(context: context)
         
