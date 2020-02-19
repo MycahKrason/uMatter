@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var affirmationsBuilderBtnDisplay: UIButton!
     @IBOutlet weak var daily5BtnDisplay: UIButton!
     @IBOutlet weak var centerAffirmation: UILabel!
+    @IBOutlet weak var moodJournalBtnDisplay: UIButton!
     
     private var daily5Array : [AffirmationData] = [AffirmationData]()
     private var randomDaily5AudioString : String?
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
         affirmationsBuilderBtnDisplay.layer.cornerRadius = 10
         daily5BtnDisplay.layer.cornerRadius = 10
         articlesBtnDisplay.layer.cornerRadius = 10
+        moodJournalBtnDisplay.layer.cornerRadius = 10
         
         //        centerAffirmation.text = "Always Remember\nYou Matter"
         

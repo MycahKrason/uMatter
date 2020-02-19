@@ -39,16 +39,31 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
         
         //Play Music
         if receivedAmbience == "Summer"{
-            //Test with Moonstruck
             playAmbienceTrack(trackName: "Summer")
         }else if receivedAmbience == "Creative Minds"{
-            //Test with Screaming Cactus
             playAmbienceTrack(trackName: "CreativeMinds")
         }else if receivedAmbience == "Better Days" {
             playAmbienceTrack(trackName: "BetterDays")
         }else if receivedAmbience == "Acoustic Breeze"{
             playAmbienceTrack(trackName: "AcousticBreeze")
+        }else if receivedAmbience == "Birth of a Hero"{
+            playAmbienceTrack(trackName: "BirthOfAHero")
+        }else if receivedAmbience == "Energy"{
+            playAmbienceTrack(trackName: "Energy")
+        }else if receivedAmbience == "Inspire"{
+            playAmbienceTrack(trackName: "Inspire")
+        }else if receivedAmbience == "Memories"{
+            playAmbienceTrack(trackName: "Memories")
+        }else if receivedAmbience == "Perception"{
+            playAmbienceTrack(trackName: "Perception")
+        }else if receivedAmbience == "Going Higher"{
+            playAmbienceTrack(trackName: "GoingHigher")
+        }else if receivedAmbience == "Slow Motion"{
+            playAmbienceTrack(trackName: "SlowMotion")
+        }else if receivedAmbience == "Elevate"{
+            playAmbienceTrack(trackName: "Elevate")
         }
+            
         //Play Nature
         else if receivedAmbience == "Forest"{
             playAmbienceTrack(trackName: "Forest")

@@ -25,7 +25,20 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     
     private var chosenAmbience : String = ""
     
-    private var ambientMusicArray : [String] = ["Summer", "Better Days", "Creative Minds", "Acoustic Breeze"]
+    private var ambientMusicArray : [String] = [
+        "Summer",
+        "Better Days",
+        "Creative Minds",
+        "Acoustic Breeze",
+        "Birth of a Hero",
+        "Elevate",
+        "Energy",
+        "Going Higher",
+        "Inspire",
+        "Memories",
+        "Perception",
+        "Slow Motion"
+    ]
     private var ambientNatureArray : [String] = ["Forest", "Ocean", "Rain", "Fireplace"]
     
     //Context for Core Data

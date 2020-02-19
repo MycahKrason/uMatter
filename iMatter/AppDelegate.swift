@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import CoreData
+import IQKeyboardManagerSwift
 
 
 @UIApplicationMain
@@ -18,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
           
+        //IQKeyboard
+//        IQKeyboardManager.shared.enable = true
+//        IQKeyboardManager.shared.enableAutoToolbar = false
+//        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
         //Firebase PNs
         Messaging.messaging().delegate = self
         FirebaseApp.configure()

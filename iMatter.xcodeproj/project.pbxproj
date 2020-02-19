@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57ACE0776BADE600FF0E1534 /* Pods_iMatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8310223E870DDE962D17337 /* Pods_iMatter.framework */; };
+		7728C34023FB204900E3FC66 /* MoodJournalSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7728C33F23FB204900E3FC66 /* MoodJournalSelectionViewController.swift */; };
+		7728C34223FB207C00E3FC66 /* MoodJournalLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7728C34123FB207C00E3FC66 /* MoodJournalLoginViewController.swift */; };
 		773584BE23D3850A0030FCBF /* ListOfAffirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584BD23D3850A0030FCBF /* ListOfAffirmations.swift */; };
 		773584E423D68A590030FCBF /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584E323D68A590030FCBF /* ArticleData.swift */; };
 		773584E623D68AA00030FCBF /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584E523D68AA00030FCBF /* ArticleXMLParser.swift */; };
@@ -17,6 +19,18 @@
 		773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */; };
 		773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */; };
 		773584F723DA8F960030FCBF /* UIView+Fades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773584F623DA8F960030FCBF /* UIView+Fades.swift */; };
+		773EFAF523E7D21B00EFE9DE /* CreativeMinds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAE923E7D21A00EFE9DE /* CreativeMinds.mp3 */; };
+		773EFAF623E7D21B00EFE9DE /* AcousticBreeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAEA23E7D21A00EFE9DE /* AcousticBreeze.mp3 */; };
+		773EFAF723E7D21B00EFE9DE /* Inspire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAEB23E7D21A00EFE9DE /* Inspire.mp3 */; };
+		773EFAF823E7D21B00EFE9DE /* Summer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAEC23E7D21A00EFE9DE /* Summer.mp3 */; };
+		773EFAF923E7D21B00EFE9DE /* SlowMotion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAED23E7D21A00EFE9DE /* SlowMotion.mp3 */; };
+		773EFAFA23E7D21B00EFE9DE /* GoingHigher.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAEE23E7D21A00EFE9DE /* GoingHigher.mp3 */; };
+		773EFAFB23E7D21B00EFE9DE /* Perception.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAEF23E7D21A00EFE9DE /* Perception.mp3 */; };
+		773EFAFC23E7D21B00EFE9DE /* Energy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAF023E7D21A00EFE9DE /* Energy.mp3 */; };
+		773EFAFD23E7D21B00EFE9DE /* Elevate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAF123E7D21A00EFE9DE /* Elevate.mp3 */; };
+		773EFAFE23E7D21B00EFE9DE /* Memories.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAF223E7D21A00EFE9DE /* Memories.mp3 */; };
+		773EFAFF23E7D21B00EFE9DE /* BetterDays.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAF323E7D21B00EFE9DE /* BetterDays.mp3 */; };
+		773EFB0023E7D21B00EFE9DE /* BirthOfAHero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 773EFAF423E7D21B00EFE9DE /* BirthOfAHero.mp3 */; };
 		77448A9723E11FA10029C567 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77448A9623E11FA10029C567 /* Private.swift */; };
 		774D0507236D1E450099426F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0506236D1E450099426F /* AppDelegate.swift */; };
 		774D0509236D1E450099426F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D0508236D1E450099426F /* SceneDelegate.swift */; };
@@ -24,10 +38,6 @@
 		774D050E236D1E450099426F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774D050C236D1E450099426F /* Main.storyboard */; };
 		774D0510236D1E480099426F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774D050F236D1E480099426F /* Assets.xcassets */; };
 		774D0513236D1E480099426F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774D0511236D1E480099426F /* LaunchScreen.storyboard */; };
-		774F7D7D239C8203009A69D2 /* Summer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D79239C8203009A69D2 /* Summer.mp3 */; };
-		774F7D7E239C8203009A69D2 /* BetterDays.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D7A239C8203009A69D2 /* BetterDays.mp3 */; };
-		774F7D7F239C8203009A69D2 /* CreativeMinds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D7B239C8203009A69D2 /* CreativeMinds.mp3 */; };
-		774F7D80239C8203009A69D2 /* AcousticBreeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D7C239C8203009A69D2 /* AcousticBreeze.mp3 */; };
 		774F7D82239C8D5B009A69D2 /* Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D81239C8D5B009A69D2 /* Ocean.mp3 */; };
 		774F7D86239C8D6A009A69D2 /* Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D83239C8D6A009A69D2 /* Forest.mp3 */; };
 		774F7D87239C8D6A009A69D2 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D84239C8D6A009A69D2 /* Rain.mp3 */; };
@@ -52,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		0D9A06F3DE96CA9822847A95 /* Pods-iMatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMatter.release.xcconfig"; path = "Target Support Files/Pods-iMatter/Pods-iMatter.release.xcconfig"; sourceTree = "<group>"; };
+		7728C33F23FB204900E3FC66 /* MoodJournalSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalSelectionViewController.swift; sourceTree = "<group>"; };
+		7728C34123FB207C00E3FC66 /* MoodJournalLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalLoginViewController.swift; sourceTree = "<group>"; };
 		773584BD23D3850A0030FCBF /* ListOfAffirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAffirmations.swift; sourceTree = "<group>"; };
 		773584E323D68A590030FCBF /* ArticleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
 		773584E523D68AA00030FCBF /* ArticleXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleXMLParser.swift; sourceTree = "<group>"; };
@@ -61,6 +73,18 @@
 		773584ED23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadCacheImage.swift"; sourceTree = "<group>"; };
 		773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDisplayViewController.swift; sourceTree = "<group>"; };
 		773584F623DA8F960030FCBF /* UIView+Fades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fades.swift"; sourceTree = "<group>"; };
+		773EFAE923E7D21A00EFE9DE /* CreativeMinds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CreativeMinds.mp3; path = ../../../_AffirmationMusic/CreativeMinds.mp3; sourceTree = "<group>"; };
+		773EFAEA23E7D21A00EFE9DE /* AcousticBreeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AcousticBreeze.mp3; path = ../../../_AffirmationMusic/AcousticBreeze.mp3; sourceTree = "<group>"; };
+		773EFAEB23E7D21A00EFE9DE /* Inspire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Inspire.mp3; path = ../../../_AffirmationMusic/Inspire.mp3; sourceTree = "<group>"; };
+		773EFAEC23E7D21A00EFE9DE /* Summer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Summer.mp3; path = ../../../_AffirmationMusic/Summer.mp3; sourceTree = "<group>"; };
+		773EFAED23E7D21A00EFE9DE /* SlowMotion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SlowMotion.mp3; path = ../../../_AffirmationMusic/SlowMotion.mp3; sourceTree = "<group>"; };
+		773EFAEE23E7D21A00EFE9DE /* GoingHigher.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = GoingHigher.mp3; path = ../../../_AffirmationMusic/GoingHigher.mp3; sourceTree = "<group>"; };
+		773EFAEF23E7D21A00EFE9DE /* Perception.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Perception.mp3; path = ../../../_AffirmationMusic/Perception.mp3; sourceTree = "<group>"; };
+		773EFAF023E7D21A00EFE9DE /* Energy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Energy.mp3; path = ../../../_AffirmationMusic/Energy.mp3; sourceTree = "<group>"; };
+		773EFAF123E7D21A00EFE9DE /* Elevate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Elevate.mp3; path = ../../../_AffirmationMusic/Elevate.mp3; sourceTree = "<group>"; };
+		773EFAF223E7D21A00EFE9DE /* Memories.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Memories.mp3; path = ../../../_AffirmationMusic/Memories.mp3; sourceTree = "<group>"; };
+		773EFAF323E7D21B00EFE9DE /* BetterDays.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BetterDays.mp3; path = ../../../_AffirmationMusic/BetterDays.mp3; sourceTree = "<group>"; };
+		773EFAF423E7D21B00EFE9DE /* BirthOfAHero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BirthOfAHero.mp3; path = ../../../_AffirmationMusic/BirthOfAHero.mp3; sourceTree = "<group>"; };
 		77448A9623E11FA10029C567 /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		774D0503236D1E450099426F /* uMatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uMatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774D0506236D1E450099426F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,10 +94,6 @@
 		774D050F236D1E480099426F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		774D0512236D1E480099426F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		774D0514236D1E480099426F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		774F7D79239C8203009A69D2 /* Summer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Summer.mp3; path = ../../../stockMusic/Summer.mp3; sourceTree = "<group>"; };
-		774F7D7A239C8203009A69D2 /* BetterDays.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BetterDays.mp3; path = ../../../stockMusic/BetterDays.mp3; sourceTree = "<group>"; };
-		774F7D7B239C8203009A69D2 /* CreativeMinds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CreativeMinds.mp3; path = ../../../stockMusic/CreativeMinds.mp3; sourceTree = "<group>"; };
-		774F7D7C239C8203009A69D2 /* AcousticBreeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AcousticBreeze.mp3; path = ../../../stockMusic/AcousticBreeze.mp3; sourceTree = "<group>"; };
 		774F7D81239C8D5B009A69D2 /* Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Ocean.mp3; path = ../../../stockMusic/Ocean.mp3; sourceTree = "<group>"; };
 		774F7D83239C8D6A009A69D2 /* Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Forest.mp3; path = ../../../stockMusic/Forest.mp3; sourceTree = "<group>"; };
 		774F7D84239C8D6A009A69D2 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rain.mp3; path = ../../../stockMusic/Rain.mp3; sourceTree = "<group>"; };
@@ -205,6 +225,8 @@
 				774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */,
 				773584E723D68C270030FCBF /* ArticlesListViewController.swift */,
 				773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */,
+				7728C33F23FB204900E3FC66 /* MoodJournalSelectionViewController.swift */,
+				7728C34123FB207C00E3FC66 /* MoodJournalLoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,10 +248,18 @@
 				774F7D83239C8D6A009A69D2 /* Forest.mp3 */,
 				774F7D84239C8D6A009A69D2 /* Rain.mp3 */,
 				774F7D81239C8D5B009A69D2 /* Ocean.mp3 */,
-				774F7D7C239C8203009A69D2 /* AcousticBreeze.mp3 */,
-				774F7D7A239C8203009A69D2 /* BetterDays.mp3 */,
-				774F7D7B239C8203009A69D2 /* CreativeMinds.mp3 */,
-				774F7D79239C8203009A69D2 /* Summer.mp3 */,
+				773EFAEA23E7D21A00EFE9DE /* AcousticBreeze.mp3 */,
+				773EFAF323E7D21B00EFE9DE /* BetterDays.mp3 */,
+				773EFAF423E7D21B00EFE9DE /* BirthOfAHero.mp3 */,
+				773EFAE923E7D21A00EFE9DE /* CreativeMinds.mp3 */,
+				773EFAF123E7D21A00EFE9DE /* Elevate.mp3 */,
+				773EFAF023E7D21A00EFE9DE /* Energy.mp3 */,
+				773EFAEE23E7D21A00EFE9DE /* GoingHigher.mp3 */,
+				773EFAEB23E7D21A00EFE9DE /* Inspire.mp3 */,
+				773EFAF223E7D21A00EFE9DE /* Memories.mp3 */,
+				773EFAEF23E7D21A00EFE9DE /* Perception.mp3 */,
+				773EFAED23E7D21A00EFE9DE /* SlowMotion.mp3 */,
+				773EFAEC23E7D21A00EFE9DE /* Summer.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -304,17 +334,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				774F7D82239C8D5B009A69D2 /* Ocean.mp3 in Resources */,
+				773EFAF823E7D21B00EFE9DE /* Summer.mp3 in Resources */,
+				773EFAFC23E7D21B00EFE9DE /* Energy.mp3 in Resources */,
+				773EFAF523E7D21B00EFE9DE /* CreativeMinds.mp3 in Resources */,
 				774D0513236D1E480099426F /* LaunchScreen.storyboard in Resources */,
+				773EFAFF23E7D21B00EFE9DE /* BetterDays.mp3 in Resources */,
 				779D25EC23837CF10049CB8D /* CustomAffirmationsCell.xib in Resources */,
 				77CDAE08238E0DAD00B561DF /* CustomTrackCell.xib in Resources */,
-				774F7D7E239C8203009A69D2 /* BetterDays.mp3 in Resources */,
-				774F7D80239C8203009A69D2 /* AcousticBreeze.mp3 in Resources */,
+				773EFAFE23E7D21B00EFE9DE /* Memories.mp3 in Resources */,
 				774D0510236D1E480099426F /* Assets.xcassets in Resources */,
+				773EFAFA23E7D21B00EFE9DE /* GoingHigher.mp3 in Resources */,
+				773EFAF923E7D21B00EFE9DE /* SlowMotion.mp3 in Resources */,
 				774D050E236D1E450099426F /* Main.storyboard in Resources */,
+				773EFAFD23E7D21B00EFE9DE /* Elevate.mp3 in Resources */,
+				773EFB0023E7D21B00EFE9DE /* BirthOfAHero.mp3 in Resources */,
+				773EFAF623E7D21B00EFE9DE /* AcousticBreeze.mp3 in Resources */,
+				773EFAFB23E7D21B00EFE9DE /* Perception.mp3 in Resources */,
 				774F7D87239C8D6A009A69D2 /* Rain.mp3 in Resources */,
+				773EFAF723E7D21B00EFE9DE /* Inspire.mp3 in Resources */,
 				774F7D88239C8D6A009A69D2 /* Fireplace.mp3 in Resources */,
-				774F7D7D239C8203009A69D2 /* Summer.mp3 in Resources */,
-				774F7D7F239C8203009A69D2 /* CreativeMinds.mp3 in Resources */,
 				774F7D86239C8D6A009A69D2 /* Forest.mp3 in Resources */,
 				773584EC23D7DC5F0030FCBF /* ArticleCell.xib in Resources */,
 				7761CE2123D0FCB0008DE6DE /* GoogleService-Info.plist in Resources */,
@@ -370,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7728C34023FB204900E3FC66 /* MoodJournalSelectionViewController.swift in Sources */,
 				774D050B236D1E450099426F /* ViewController.swift in Sources */,
 				774F7D8A239D76B3009A69D2 /* TermsAndPrivacyViewController.swift in Sources */,
 				773584E823D68C270030FCBF /* ArticlesListViewController.swift in Sources */,
@@ -392,6 +431,7 @@
 				779D25EE238386640049CB8D /* RetrieveAffirmations.swift in Sources */,
 				773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */,
 				776246AD236D30C4003C2D6A /* AppDelegate+PushNotifications.swift in Sources */,
+				7728C34223FB207C00E3FC66 /* MoodJournalLoginViewController.swift in Sources */,
 				773584BE23D3850A0030FCBF /* ListOfAffirmations.swift in Sources */,
 				77B45F5B23960F480067FE1C /* InAppSubscriptionModalViewController.swift in Sources */,
 				77CDAE07238E0DAD00B561DF /* CustomTrackCell.swift in Sources */,
@@ -541,12 +581,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iMatter/iMatter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 478W25T2R7;
 				INFOPLIST_FILE = iMatter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycahkrason.iMatter;
 				PRODUCT_NAME = uMatter;
 				SWIFT_VERSION = 5.0;
@@ -561,12 +604,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iMatter/iMatter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 478W25T2R7;
 				INFOPLIST_FILE = iMatter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycahkrason.iMatter;
 				PRODUCT_NAME = uMatter;
 				SWIFT_VERSION = 5.0;
