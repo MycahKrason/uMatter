@@ -6,11 +6,16 @@ target 'iMatter' do
   use_frameworks!
 
   # Pods for iMatter
-  pod 'IQKeyboardManagerSwift'
+  
 
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'  
+  pod 'Firebase/Core'
+
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 end

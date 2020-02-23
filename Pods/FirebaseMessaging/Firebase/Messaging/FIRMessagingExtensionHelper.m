@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#import "FIRMessagingExtensionHelper.h"
+#import <FirebaseMessaging/FIRMessagingExtensionHelper.h>
 
-#import "FIRMMessageCode.h"
-#import "FIRMessagingLogger.h"
+#import "Firebase/Messaging/FIRMMessageCode.h"
+#import "Firebase/Messaging/FIRMessagingLogger.h"
 
 static NSString *const kPayloadOptionsName = @"fcm_options";
 static NSString *const kPayloadOptionsImageURLName = @"image";
@@ -36,7 +36,7 @@ static NSString *const kPayloadOptionsImageURLName = @"image";
   self.bestAttemptContent = content;
 
   // The `userInfo` property isn't available on newer versions of tvOS.
-#if TARGET_OS_IOS || TARGET_OS_OSX
+#if TARGET_OS_IOS || TARGET_OS_OSX || TARGET_OS_WATCH
   NSString *currentImageURL = content.userInfo[kPayloadOptionsName][kPayloadOptionsImageURLName];
   if (!currentImageURL) {
     [self deliverNotification];
@@ -59,7 +59,7 @@ static NSString *const kPayloadOptionsImageURLName = @"image";
 #endif
 }
 
-#if TARGET_OS_IOS || TARGET_OS_OSX
+#if TARGET_OS_IOS || TARGET_OS_OSX || TARGET_OS_WATCH
 - (void)loadAttachmentForURL:(NSURL *)attachmentURL
            completionHandler:(void (^)(UNNotificationAttachment *))completionHandler {
   __block UNNotificationAttachment *attachment = nil;

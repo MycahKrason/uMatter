@@ -7,27 +7,232 @@
 //
 
 import UIKit
+import Firebase
 
-class MoodJournalSelectionViewController: UIViewController {
-
+class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var loginBtnDisplay: UIButton!
     @IBOutlet weak var addJournalEntryDisplay: UIButton!
+    @IBOutlet weak var journalListTable: UITableView!
+    
+    var journalEntryArray = [JournalEntryData]()
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Set up buttons
         loginBtnDisplay.layer.cornerRadius = 10
         addJournalEntryDisplay.layer.cornerRadius = 10
         
-    }
-    
-    @IBAction func addJournalEntry(_ sender: Any) {
+        //Set Table Delegates
+        journalListTable.delegate = self
+        journalListTable.dataSource = self
+        
+        //Set up cell
+        journalListTable.register(UINib(nibName: "JournalEntryCell", bundle: nil), forCellReuseIdentifier: "JournalEntryCell")
+            
+        journalListTable.rowHeight = UITableView.automaticDimension
+        journalListTable.estimatedRowHeight = 50
+        
+        //Check if the user is logged in or not
+        if Auth.auth().currentUser == nil{
+            //Set title and color for login btn
+            loginBtnDisplay.setTitle("Login", for: .normal)
+            loginBtnDisplay.setTitleColor(.white, for: .normal)
+            
+            //Set color for Entry button
+            addJournalEntryDisplay.setTitleColor(.lightGray, for: .normal)
+            
+            print("You are not logged in")
+        }else{
+            loginBtnDisplay.setTitle("Logout", for: .normal)
+            loginBtnDisplay.setTitleColor(.lightGray, for: .normal)
+            print("You are already logged in")
+            
+            //Set color for Entry button
+            addJournalEntryDisplay.setTitleColor(.white, for: .normal)
+        }
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //Check if the user is logged in or not
+        if Auth.auth().currentUser == nil{
+            loginBtnDisplay.setTitle("Login", for: .normal)
+            loginBtnDisplay.setTitleColor(.white, for: .normal)
+            print("You are not logged in")
+            
+            //Set color for Entry button
+            addJournalEntryDisplay.setTitleColor(.lightGray, for: .normal)
+        }else{
+            loginBtnDisplay.setTitle("Logout", for: .normal)
+            loginBtnDisplay.setTitleColor(.lightGray, for: .normal)
+            print("You are already logged in")
+            
+            //Set color for Entry button
+            addJournalEntryDisplay.setTitleColor(.white, for: .normal)
+        }
+        
+        retrieveJournalEntrie()
+    }
+    
+    fileprivate func retrieveJournalEntrie(){
+        
+        journalEntryArray = []
+        
+        //grab the user
+        if let userId = Auth.auth().currentUser?.uid {
+            
+            db.collection("Users").document(userId).collection("JournalEntries").order(by: "sortTime", descending: true).getDocuments { (querySnapshot, err) in
+               
+                if let e = err{
+                    print("There was an issue downloading")
+                }else{
+                    
+                    //Check for the snapshot
+                    if let snapDoc = querySnapshot?.documents {
+                        
+                        //iterate over the snapshot and append the journal data to the array
+                        for doc in snapDoc{
+                            
+                            let docDict = doc.data()
+                            
+                            if let mood = docDict["mood"] as? String,
+                            let date = docDict["date"] as? String,
+                            let entry = docDict["entry"] as? String {
+                                
+                                let journalData = JournalEntryData(date: date, mood: mood, entry: entry, entryKey: doc.documentID)
+                                self.journalEntryArray.append(journalData)
+                                
+                            }
+                        }
+                        self.journalListTable.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "moodJournalToInfo"{
+
+            let destVC = segue.destination as! TermsAndPrivacyViewController
+            destVC.receivedTitle = "Mood Journal"
+
+        }
+    }
+    
+    //MARK: Tables
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return journalEntryArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = journalListTable.dequeueReusableCell(withIdentifier: "JournalEntryCell", for: indexPath) as! JournalEntryCell
+        
+        cell.entryDateDisplay.text = journalEntryArray[indexPath.row].date
+//        cell.enteredMoodDisplay
+        cell.entryContentDisplay.text = journalEntryArray[indexPath.row].entry
+        
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //show alert
+        let alertController = UIAlertController(title: nil, message:"Would you like to Delete this entry?", preferredStyle: UIAlertController.Style.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.default){ action -> Void in
+            
+            //Delete the journal entry
+            print(self.journalEntryArray[indexPath.row].entryKey)
+            
+            let idToDelete = self.journalEntryArray[indexPath.row].entryKey
+             self.db.collection("Users").document(Auth.auth().currentUser!.uid).collection("JournalEntries").document(idToDelete).delete()
+            
+            self.journalEntryArray.remove(at: indexPath.row)
+            
+            self.journalListTable.reloadData()
+            
+        })
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+        
+        
+    }
+    
+    @IBAction func addJournalEntry(_ sender: Any) {
+        //TODO: Check to make sure that the user is logged in - if they aren't, show a message
+        
+        if Auth.auth().currentUser == nil{
+            print("user needs to be logged in to add an entry")
+            
+            //show alert
+            let alertController = UIAlertController(title: nil, message:"You must login to add an Entry.", preferredStyle: UIAlertController.Style.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }else{
+            performSegue(withIdentifier: "entryBtnToJournalForm", sender: self)
+        }
+    }
+    
+    //MARK: Buttons
+    
     @IBAction func loginLogoutBtnPressed(_ sender: Any) {
         //To login
-        performSegue(withIdentifier: "moodJournalToSignIn", sender: self)
+        if Auth.auth().currentUser == nil{
+            performSegue(withIdentifier: "moodJournalToSignIn", sender: self)
+        }else{
+            
+            //show alert
+            let alertController = UIAlertController(title: nil, message:"Are you sure you want to Logout?", preferredStyle: UIAlertController.Style.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default){ action -> Void in
+                
+                //Logout the user
+                print("you are tryinig to logout")
+                //Clear the array
+                self.journalEntryArray = []
+                self.journalListTable.reloadData()
+                
+                do{
+                    try Auth.auth().signOut()
+                    self.loginBtnDisplay.setTitle("Login", for: .normal)
+                    self.loginBtnDisplay.setTitleColor(.white, for: .normal)
+                    
+                    //Set color for Entry button
+                    self.addJournalEntryDisplay.setTitleColor(.lightGray, for: .normal)
+                    
+                }catch let error as NSError{
+                    print (error.localizedDescription)
+                }
+                
+            })
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func infoBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "moodJournalToInfo", sender: self)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

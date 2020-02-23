@@ -14,6 +14,7 @@ class CategoryAffirmationsViewController: UIViewController {
     @IBOutlet weak var anxietyBtnDisplay: UIButton!
     @IBOutlet weak var positivityBtnDisplay: UIButton!
     @IBOutlet weak var favoritesBtnDisplay: UIButton!
+    @IBOutlet weak var confidenceBtnDisplay: UIButton!
     
     private var categoryToSend : String = ""
     
@@ -23,6 +24,7 @@ class CategoryAffirmationsViewController: UIViewController {
         motivationBtnDisplay.layer.cornerRadius = 10
         anxietyBtnDisplay.layer.cornerRadius = 10
         positivityBtnDisplay.layer.cornerRadius = 10
+        confidenceBtnDisplay.layer.cornerRadius = 10
         favoritesBtnDisplay.layer.cornerRadius = 10
     }
     

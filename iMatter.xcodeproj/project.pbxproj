@@ -43,6 +43,7 @@
 		774F7D87239C8D6A009A69D2 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D84239C8D6A009A69D2 /* Rain.mp3 */; };
 		774F7D88239C8D6A009A69D2 /* Fireplace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D85239C8D6A009A69D2 /* Fireplace.mp3 */; };
 		774F7D8A239D76B3009A69D2 /* TermsAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */; };
+		775AAC862402054600B9AF55 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */; };
 		7761CE2123D0FCB0008DE6DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7761CE2023D0FCB0008DE6DE /* GoogleService-Info.plist */; };
 		776246AD236D30C4003C2D6A /* AppDelegate+PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776246AC236D30C4003C2D6A /* AppDelegate+PushNotifications.swift */; };
 		779D25E623820B030049CB8D /* AffirmationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D25E523820B030049CB8D /* AffirmationsListViewController.swift */; };
@@ -53,6 +54,10 @@
 		779D25F0238387340049CB8D /* AffirmationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D25EF238387340049CB8D /* AffirmationData.swift */; };
 		77B45F5723945D5A0067FE1C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77B45F5523945D5A0067FE1C /* DataModel.xcdatamodeld */; };
 		77B45F5B23960F480067FE1C /* InAppSubscriptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B45F5A23960F480067FE1C /* InAppSubscriptionModalViewController.swift */; };
+		77C4D61124005EC500590EBC /* MoodJournalEntryFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C4D61024005EC500590EBC /* MoodJournalEntryFormViewController.swift */; };
+		77C4D6142400EA0B00590EBC /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C4D6122400EA0B00590EBC /* JournalEntryCell.swift */; };
+		77C4D6152400EA0B00590EBC /* JournalEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C4D6132400EA0B00590EBC /* JournalEntryCell.xib */; };
+		77C4D6192401AFB300590EBC /* JournalEntryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C4D6182401AFB300590EBC /* JournalEntryData.swift */; };
 		77CDAE02238A550800B561DF /* AffirmationBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDAE01238A550800B561DF /* AffirmationBuilderViewController.swift */; };
 		77CDAE04238E06F900B561DF /* CustomAffirmationPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDAE03238E06F900B561DF /* CustomAffirmationPlayerViewController.swift */; };
 		77CDAE07238E0DAD00B561DF /* CustomTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */; };
@@ -99,6 +104,7 @@
 		774F7D84239C8D6A009A69D2 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rain.mp3; path = ../../../stockMusic/Rain.mp3; sourceTree = "<group>"; };
 		774F7D85239C8D6A009A69D2 /* Fireplace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fireplace.mp3; path = ../../../stockMusic/Fireplace.mp3; sourceTree = "<group>"; };
 		774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		7761CE2023D0FCB0008DE6DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		776246AA236D2917003C2D6A /* iMatter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iMatter.entitlements; sourceTree = "<group>"; };
 		776246AC236D30C4003C2D6A /* AppDelegate+PushNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+PushNotifications.swift"; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 		779D25EF238387340049CB8D /* AffirmationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationData.swift; sourceTree = "<group>"; };
 		77B45F5623945D5A0067FE1C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		77B45F5A23960F480067FE1C /* InAppSubscriptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppSubscriptionModalViewController.swift; sourceTree = "<group>"; };
+		77C4D61024005EC500590EBC /* MoodJournalEntryFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalEntryFormViewController.swift; sourceTree = "<group>"; };
+		77C4D6122400EA0B00590EBC /* JournalEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
+		77C4D6132400EA0B00590EBC /* JournalEntryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalEntryCell.xib; sourceTree = "<group>"; };
+		77C4D6182401AFB300590EBC /* JournalEntryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryData.swift; sourceTree = "<group>"; };
 		77CDAE01238A550800B561DF /* AffirmationBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationBuilderViewController.swift; sourceTree = "<group>"; };
 		77CDAE03238E06F900B561DF /* CustomAffirmationPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAffirmationPlayerViewController.swift; sourceTree = "<group>"; };
 		77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrackCell.swift; sourceTree = "<group>"; };
@@ -194,6 +204,7 @@
 				773584BD23D3850A0030FCBF /* ListOfAffirmations.swift */,
 				773584E323D68A590030FCBF /* ArticleData.swift */,
 				773584E523D68AA00030FCBF /* ArticleXMLParser.swift */,
+				77C4D6182401AFB300590EBC /* JournalEntryData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +218,8 @@
 				77CDAE06238E0DAD00B561DF /* CustomTrackCell.xib */,
 				773584E923D7DC5F0030FCBF /* ArticleCell.swift */,
 				773584EA23D7DC5F0030FCBF /* ArticleCell.xib */,
+				77C4D6122400EA0B00590EBC /* JournalEntryCell.swift */,
+				77C4D6132400EA0B00590EBC /* JournalEntryCell.xib */,
 				774D050C236D1E450099426F /* Main.storyboard */,
 			);
 			path = View;
@@ -227,6 +240,8 @@
 				773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */,
 				7728C33F23FB204900E3FC66 /* MoodJournalSelectionViewController.swift */,
 				7728C34123FB207C00E3FC66 /* MoodJournalLoginViewController.swift */,
+				77C4D61024005EC500590EBC /* MoodJournalEntryFormViewController.swift */,
+				775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -335,6 +350,7 @@
 			files = (
 				774F7D82239C8D5B009A69D2 /* Ocean.mp3 in Resources */,
 				773EFAF823E7D21B00EFE9DE /* Summer.mp3 in Resources */,
+				77C4D6152400EA0B00590EBC /* JournalEntryCell.xib in Resources */,
 				773EFAFC23E7D21B00EFE9DE /* Energy.mp3 in Resources */,
 				773EFAF523E7D21B00EFE9DE /* CreativeMinds.mp3 in Resources */,
 				774D0513236D1E480099426F /* LaunchScreen.storyboard in Resources */,
@@ -414,8 +430,11 @@
 				773584E823D68C270030FCBF /* ArticlesListViewController.swift in Sources */,
 				779D25F0238387340049CB8D /* AffirmationData.swift in Sources */,
 				773584F723DA8F960030FCBF /* UIView+Fades.swift in Sources */,
+				775AAC862402054600B9AF55 /* ResetPasswordViewController.swift in Sources */,
+				77C4D6192401AFB300590EBC /* JournalEntryData.swift in Sources */,
 				774D0507236D1E450099426F /* AppDelegate.swift in Sources */,
 				77B45F5723945D5A0067FE1C /* DataModel.xcdatamodeld in Sources */,
+				77C4D6142400EA0B00590EBC /* JournalEntryCell.swift in Sources */,
 				77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */,
 				779D25E823820FB40049CB8D /* AudioPlayerViewController.swift in Sources */,
 				773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */,
@@ -434,6 +453,7 @@
 				7728C34223FB207C00E3FC66 /* MoodJournalLoginViewController.swift in Sources */,
 				773584BE23D3850A0030FCBF /* ListOfAffirmations.swift in Sources */,
 				77B45F5B23960F480067FE1C /* InAppSubscriptionModalViewController.swift in Sources */,
+				77C4D61124005EC500590EBC /* MoodJournalEntryFormViewController.swift in Sources */,
 				77CDAE07238E0DAD00B561DF /* CustomTrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
