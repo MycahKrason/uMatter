@@ -88,7 +88,7 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
             db.collection("Users").document(userId).collection("JournalEntries").order(by: "sortTime", descending: true).getDocuments { (querySnapshot, err) in
                
                 if let e = err{
-                    print("There was an issue downloading")
+                    print("There was an issue downloading: \(e)")
                 }else{
                     
                     //Check for the snapshot
@@ -99,13 +99,18 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
                             
                             let docDict = doc.data()
                             
+                            var entry = ""
+                            if let docEntry = docDict["entry"] as? String {
+                                entry = docEntry
+                            } else if let encryptedDocEntry = docDict["JournalEntry"] as? String {
+                                entry = self.decryptMessage(encryptedDocEntry)
+                            }
+                            
                             if let mood = docDict["mood"] as? String,
-                            let date = docDict["date"] as? String,
-                            let entry = docDict["entry"] as? String {
-                                
+                            let date = docDict["date"] as? String{
+                                //Create the Journal Entry Object
                                 let journalData = JournalEntryData(date: date, mood: mood, entry: entry, entryKey: doc.documentID)
                                 self.journalEntryArray.append(journalData)
-                                
                             }
                         }
                         self.journalListTable.reloadData()
@@ -115,13 +120,24 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
         }
     }
     
+    func decryptMessage(_ messageToDecrypt: String) -> String {
+        var decryptedString = ""
+        do {
+            print("Message to Decrypt: \(messageToDecrypt)")
+            let aes = try AES()
+            if let dataReturnedFromServer = Data(base64Encoded: messageToDecrypt) {
+                decryptedString = try aes.decrypt(dataReturnedFromServer)
+            }
+        } catch {
+            print("Something went wrong: \(error)")
+        }
+        return decryptedString
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "moodJournalToInfo"{
-
             let destVC = segue.destination as! TermsAndPrivacyViewController
             destVC.receivedTitle = "Mood Journal"
-
         }
     }
     
@@ -131,17 +147,13 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         let cell = journalListTable.dequeueReusableCell(withIdentifier: "JournalEntryCell", for: indexPath) as! JournalEntryCell
         
         cell.entryDateDisplay.text = journalEntryArray[indexPath.row].date
-//        cell.enteredMoodDisplay
+        cell.enteredMoodDisplay.image = UIImage(named: journalEntryArray[indexPath.row].mood)
         cell.entryContentDisplay.text = journalEntryArray[indexPath.row].entry
         
-        
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -169,10 +181,6 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
         })
         
         self.present(alertController, animated: true, completion: nil)
-        
-        
-        
-        
     }
     
     @IBAction func addJournalEntry(_ sender: Any) {
@@ -236,9 +244,6 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
-        
     }
-    
 }

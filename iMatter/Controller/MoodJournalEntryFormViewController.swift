@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class MoodJournalEntryFormViewController: UIViewController {
-
+    
     @IBOutlet weak var entryTextInput: UITextView!
     @IBOutlet weak var submitBtnDisplay: UIButton!
     
@@ -26,7 +26,7 @@ class MoodJournalEntryFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Set up UI Corner Radius
         submitBtnDisplay.layer.cornerRadius = 10
         entryTextInput.layer.cornerRadius = 5
@@ -39,6 +39,8 @@ class MoodJournalEntryFormViewController: UIViewController {
         
         //Set keyboard color
         entryTextInput.keyboardAppearance = .dark
+        entryTextInput.returnKeyType = .done
+        entryTextInput.delegate = self
         
         //Set up tap to dismiss keyboard
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(_:)))
@@ -46,8 +48,23 @@ class MoodJournalEntryFormViewController: UIViewController {
         
     }
     
+    func encryptMessage(_ messageToEncrypt: String) -> String {
+        var encryptedString = ""
+        do{
+            let aes = try AES()
+            let stringToEncrypt: String = messageToEncrypt
+            print("String to encrypt: \(stringToEncrypt)")
+            let encryptedData: Data = try aes.encrypt(stringToEncrypt)
+            encryptedString = encryptedData.base64EncodedString()
+            print("Encrypted String: \(encryptedString)")
+        } catch {
+            print("Something went wrong: \(error)")
+        }
+        return encryptedString
+    }
+    
     @IBAction func submitEntryBtnPressed(_ sender: Any) {
-
+        
         //do a check to ensure that the entry is set and a mood has been chosen
         guard let entryText = entryTextInput.text else {return}
         guard let chosenMood = moodSelected else {
@@ -65,12 +82,13 @@ class MoodJournalEntryFormViewController: UIViewController {
         
         //grab the user
         if let userId = Auth.auth().currentUser?.uid {
+            //Encrypt the entry
+            let encryptedEntry = encryptMessage(entryText)
             
-            db.collection("Users").document(userId).collection("JournalEntries").addDocument(data: ["entry": entryText, "mood": chosenMood, "date": dateTimePosted, "sortTime": Date()]) { (err) in
-                
+            //Send entry to DB
+            db.collection("Users").document(userId).collection("JournalEntries").addDocument(data: ["JournalEntry": encryptedEntry, "mood": chosenMood, "date": dateTimePosted, "sortTime": Date()]) { (err) in
                 print("New Entry has been added")
                 self.dismiss(animated: true, completion: nil)
-                
             }
         }
     }
@@ -122,4 +140,13 @@ class MoodJournalEntryFormViewController: UIViewController {
         case veryHappy
     }
     
+}
+
+extension MoodJournalEntryFormViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
 }

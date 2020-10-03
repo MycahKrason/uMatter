@@ -24,12 +24,27 @@ class ViewController: UIViewController {
     private var randomDaily5AudioString : String?
     private var randomDaily5Title : String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         layoutSetup()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        pulsateBtn()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.daily5BtnDisplay.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+    }
+    
+    func pulsateBtn(){
+        //Pulsate the button
+        
+        UIView.animate(withDuration: 1, delay:0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
+            self.daily5BtnDisplay.transform = CGAffineTransform(scaleX: 1.07, y: 1.07)
+        }, completion: nil)
     }
     
     fileprivate func layoutSetup() {
@@ -38,8 +53,6 @@ class ViewController: UIViewController {
         daily5BtnDisplay.layer.cornerRadius = 10
         articlesBtnDisplay.layer.cornerRadius = 10
         moodJournalBtnDisplay.layer.cornerRadius = 10
-        
-        //        centerAffirmation.text = "Always Remember\nYou Matter"
         
         centerAffirmation.text = ListOfAffirmations().listOfAllAffirmations.randomElement()
         
@@ -86,4 +99,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

@@ -80,6 +80,8 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomAffirmationsCell", for: indexPath) as! CustomAffirmationsCell
+        
+        //Set the cell delegate
         cell.delegate = self
         
         if recievedCategory != "Favorites"{

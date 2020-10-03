@@ -151,7 +151,6 @@ class MoodJournalLoginViewController: UIViewController {
     
     
     //MARK: keyboard
-    
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
@@ -166,7 +165,6 @@ class MoodJournalLoginViewController: UIViewController {
     }
     
     @objc func handleScreenTap(_ sender: UITapGestureRecognizer){
-        
         self.view.endEditing(true)
     }
     

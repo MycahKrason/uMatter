@@ -43,6 +43,7 @@
 		774F7D87239C8D6A009A69D2 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D84239C8D6A009A69D2 /* Rain.mp3 */; };
 		774F7D88239C8D6A009A69D2 /* Fireplace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 774F7D85239C8D6A009A69D2 /* Fireplace.mp3 */; };
 		774F7D8A239D76B3009A69D2 /* TermsAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */; };
+		77536925250D831400466251 /* AES256Crypter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77536924250D831400466251 /* AES256Crypter.swift */; };
 		775AAC862402054600B9AF55 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */; };
 		7761CE2123D0FCB0008DE6DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7761CE2023D0FCB0008DE6DE /* GoogleService-Info.plist */; };
 		776246AD236D30C4003C2D6A /* AppDelegate+PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776246AC236D30C4003C2D6A /* AppDelegate+PushNotifications.swift */; };
@@ -104,6 +105,7 @@
 		774F7D84239C8D6A009A69D2 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rain.mp3; path = ../../../stockMusic/Rain.mp3; sourceTree = "<group>"; };
 		774F7D85239C8D6A009A69D2 /* Fireplace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fireplace.mp3; path = ../../../stockMusic/Fireplace.mp3; sourceTree = "<group>"; };
 		774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		77536924250D831400466251 /* AES256Crypter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256Crypter.swift; sourceTree = "<group>"; };
 		775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		7761CE2023D0FCB0008DE6DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		776246AA236D2917003C2D6A /* iMatter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iMatter.entitlements; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		774D0505236D1E450099426F /* iMatter */ = {
 			isa = PBXGroup;
 			children = (
+				77536923250D82FB00466251 /* Encryption */,
 				77448A9523E11F8D0029C567 /* Private */,
 				77B45F4D239312290067FE1C /* Sounds */,
 				776246AB236D30A8003C2D6A /* Extensions */,
@@ -244,6 +247,14 @@
 				775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		77536923250D82FB00466251 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				77536924250D831400466251 /* AES256Crypter.swift */,
+			);
+			path = Encryption;
 			sourceTree = "<group>";
 		};
 		776246AB236D30A8003C2D6A /* Extensions */ = {
@@ -437,6 +448,7 @@
 				77C4D6142400EA0B00590EBC /* JournalEntryCell.swift in Sources */,
 				77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */,
 				779D25E823820FB40049CB8D /* AudioPlayerViewController.swift in Sources */,
+				77536925250D831400466251 /* AES256Crypter.swift in Sources */,
 				773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */,
 				779D25E623820B030049CB8D /* AffirmationsListViewController.swift in Sources */,
 				773584E623D68AA00030FCBF /* ArticleXMLParser.swift in Sources */,
@@ -601,7 +613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iMatter/iMatter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 478W25T2R7;
 				INFOPLIST_FILE = iMatter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -609,7 +621,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycahkrason.iMatter;
 				PRODUCT_NAME = uMatter;
 				SWIFT_VERSION = 5.0;
@@ -624,7 +636,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iMatter/iMatter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 478W25T2R7;
 				INFOPLIST_FILE = iMatter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -632,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycahkrason.iMatter;
 				PRODUCT_NAME = uMatter;
 				SWIFT_VERSION = 5.0;

@@ -23,6 +23,8 @@ class ResetPasswordViewController: UIViewController {
         
         resetBtnDisplay.layer.cornerRadius = 10
         
+        emailResetInput.keyboardAppearance = .dark
+        
     }
     
     @objc func handleScreenTap(_ sender: UITapGestureRecognizer){
@@ -68,5 +70,4 @@ class ResetPasswordViewController: UIViewController {
             }
         }
     }
-    
 }
