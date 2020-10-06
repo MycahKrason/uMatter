@@ -24,7 +24,7 @@ class MoodJournalLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Set up sign in button display
         signInBtnDisplay.layer.cornerRadius = 10
         

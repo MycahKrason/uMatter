@@ -20,6 +20,9 @@ class CategoryAffirmationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Affirmation Tracks"
 
         motivationBtnDisplay.layer.cornerRadius = 10
         anxietyBtnDisplay.layer.cornerRadius = 10

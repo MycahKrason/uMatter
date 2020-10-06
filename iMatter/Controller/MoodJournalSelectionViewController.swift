@@ -21,6 +21,9 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Mood Journal"
+        
         //Set up buttons
         loginBtnDisplay.layer.cornerRadius = 10
         addJournalEntryDisplay.layer.cornerRadius = 10

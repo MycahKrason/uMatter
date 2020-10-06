@@ -23,11 +23,13 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        
         
         //Set up the display
         affirmationTableView.rowHeight = 70
         if let categoryTitle = recievedCategory{
-            affirmationListTitle.text = categoryTitle
+            title = categoryTitle
         }
         
         affirmationTableView.delegate = self

@@ -17,6 +17,8 @@ class ArticleDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Article"
         
         if let receivedArticleURLSafe = receivedArticleURL{
             let myURL = URL(string: receivedArticleURLSafe)

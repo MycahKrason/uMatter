@@ -26,6 +26,8 @@ class AudioPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Affirmation Player"
         
         // Access the shared, singleton audio session instance
         let session = AVAudioSession.sharedInstance()
