@@ -48,6 +48,9 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Affirmation Builder"
+        
         segmentDisplay.selectedSegmentIndex = 0
         
         trackListTable.delegate = self

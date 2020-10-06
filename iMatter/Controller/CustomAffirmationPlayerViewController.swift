@@ -30,6 +30,9 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Builder Player"
+        
         repeatBtnDisplay.tintColor = UIColor.darkGray
         
         //Play Affirmations

@@ -19,6 +19,9 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
+        title = "Article List"
+        
         //Set up delegates
         articleTableView.delegate = self
         articleTableView.dataSource = self

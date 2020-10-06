@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isHidden = true
         layoutSetup()
         
     }
@@ -35,6 +35,9 @@ class ViewController: UIViewController {
         pulsateBtn()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
     override func viewDidDisappear(_ animated: Bool) {
         self.daily5BtnDisplay.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
     }
