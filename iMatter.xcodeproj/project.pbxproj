@@ -64,6 +64,7 @@
 		77CDAE07238E0DAD00B561DF /* CustomTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */; };
 		77CDAE08238E0DAD00B561DF /* CustomTrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77CDAE06238E0DAD00B561DF /* CustomTrackCell.xib */; };
 		77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D926B92389D354007E7DDA /* CategoryAffirmationsViewController.swift */; };
+		C0FF80B1253141C200D83744 /* InfoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF80B0253141C200D83744 /* InfoButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +128,7 @@
 		77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrackCell.swift; sourceTree = "<group>"; };
 		77CDAE06238E0DAD00B561DF /* CustomTrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTrackCell.xib; sourceTree = "<group>"; };
 		77D926B92389D354007E7DDA /* CategoryAffirmationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAffirmationsViewController.swift; sourceTree = "<group>"; };
+		C0FF80B0253141C200D83744 /* InfoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonView.swift; sourceTree = "<group>"; };
 		D47EC3C3458F73E17954B19C /* Pods-iMatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMatter.debug.xcconfig"; path = "Target Support Files/Pods-iMatter/Pods-iMatter.debug.xcconfig"; sourceTree = "<group>"; };
 		D8310223E870DDE962D17337 /* Pods_iMatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 				773584E323D68A590030FCBF /* ArticleData.swift */,
 				773584E523D68AA00030FCBF /* ArticleXMLParser.swift */,
 				77C4D6182401AFB300590EBC /* JournalEntryData.swift */,
+				C0FF80B0253141C200D83744 /* InfoButtonView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				77B45F5723945D5A0067FE1C /* DataModel.xcdatamodeld in Sources */,
 				77C4D6142400EA0B00590EBC /* JournalEntryCell.swift in Sources */,
 				77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */,
+				C0FF80B1253141C200D83744 /* InfoButtonView.swift in Sources */,
 				779D25E823820FB40049CB8D /* AudioPlayerViewController.swift in Sources */,
 				77536925250D831400466251 /* AES256Crypter.swift in Sources */,
 				773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */,

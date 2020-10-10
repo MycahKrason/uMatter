@@ -11,7 +11,6 @@ import CoreData
 
 class AffirmationsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AffirmationsCellDelegate {
 
-    @IBOutlet weak var affirmationListTitle: UILabel!
     @IBOutlet weak var affirmationTableView: UITableView!
     
     var recievedCategory : String?
@@ -20,11 +19,16 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
     
     //Context for Core Data
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var infoButton: InfoButtonView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         
+        infoButton = InfoButtonView(vc: self, segueIdentifier: "affirmationPlayListToInfo")
+        if let infoBtn = infoButton {
+            infoBtn.addInfoButton()
+        }
         
         //Set up the display
         affirmationTableView.rowHeight = 70
@@ -260,16 +264,5 @@ class AffirmationsListViewController: UIViewController, UITableViewDelegate, UIT
         
         saveFavoriteAffirmationsToCD()
         favoritesArray.append(favoriteAffirmation)
-    }
-    
-    @IBAction func infoBtnClicked(_ sender: Any) {
-        performSegue(withIdentifier: "affirmationPlayListToInfo", sender: self)
-        
-        //Use prepare for segue to transfer any info
-    }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+    }  
 }

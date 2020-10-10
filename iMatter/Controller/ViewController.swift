@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         layoutSetup()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +43,6 @@ class ViewController: UIViewController {
     
     func pulsateBtn(){
         //Pulsate the button
-        
         UIView.animate(withDuration: 1, delay:0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
             self.daily5BtnDisplay.transform = CGAffineTransform(scaleX: 1.07, y: 1.07)
         }, completion: nil)

@@ -616,7 +616,7 @@
         <scene sceneID="kcJ-Lm-Q3f">
             <objects>
                 <viewController id="Xhh-ti-PrG" customClass="TermsAndPrivacyViewController" customModule="uMatter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" id="9c3-Bk-cFn">
+                    <view key="view" contentMode="scaleToFill" id="9c3-Bk-cFn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1230,7 +1230,6 @@
                                         <connections>
                                             <action selector="closeBtnPressed:" destination="fz3-K9-vu2" eventType="touchUpInside" id="Iyw-N2-7QE"/>
                                             <action selector="closeViewBtnPressed:" destination="ux0-2o-1oE" eventType="touchUpInside" id="sYV-RG-bZL"/>
-                                            <action selector="infoBtnPressed:" destination="4B1-hA-HE4" eventType="touchUpInside" id="onL-Uv-LjC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1351,7 +1350,6 @@
                                         </state>
                                         <connections>
                                             <action selector="closeBtnPressed:" destination="fz3-K9-vu2" eventType="touchUpInside" id="Dxq-fw-gRM"/>
-                                            <action selector="infoBtnPressed:" destination="4B1-hA-HE4" eventType="touchUpInside" id="bdw-Aq-ca8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1753,8 +1751,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NNv-pA-gVG"/>
-        <segue reference="d2T-nB-Ima"/>
-        <segue reference="j1e-Do-HIl"/>
+        <segue reference="TMh-NZ-39k"/>
+        <segue reference="crn-zF-Llv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="IMG_1057 copy" width="417" height="1024"/>

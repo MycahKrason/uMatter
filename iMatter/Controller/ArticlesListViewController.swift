@@ -14,10 +14,14 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     private var articleArray : [ArticleData] = [ArticleData]()
-    
+    var infoButton: InfoButtonView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        infoButton = InfoButtonView(vc: self, segueIdentifier: "articleListToInfo")
+        if let infoBtn = infoButton {
+            infoBtn.addInfoButton()
+        }
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Article List"
@@ -96,14 +100,6 @@ class ArticlesListViewController: UIViewController, UITableViewDelegate, UITable
         }
         task.resume()
         
-    }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func infoBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "articleListToInfo", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -17,12 +17,16 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
     
     var journalEntryArray = [JournalEntryData]()
     let db = Firestore.firestore()
-    
+    var infoButton: InfoButtonView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Mood Journal"
+        
+        infoButton = InfoButtonView(vc: self, segueIdentifier: "moodJournalToInfo")
+        if let infoBtn = infoButton {
+            infoBtn.addInfoButton()
+        }
         
         //Set up buttons
         loginBtnDisplay.layer.cornerRadius = 10
@@ -241,12 +245,5 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
             self.present(alertController, animated: true, completion: nil)
             
         }
-    }
-    @IBAction func infoBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "moodJournalToInfo", sender: self)
-    }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 }

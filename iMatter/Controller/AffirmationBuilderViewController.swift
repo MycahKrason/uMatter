@@ -43,13 +43,17 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
     
     //Context for Core Data
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var infoButton: InfoButtonView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Affirmation Builder"
+        
+        infoButton = InfoButtonView(vc: self, segueIdentifier: "affirmationBuilderToInfo")
+        if let infoBtn = infoButton {
+            infoBtn.addInfoButton()
+        }
         
         segmentDisplay.selectedSegmentIndex = 0
         
@@ -370,13 +374,4 @@ class AffirmationBuilderViewController: UIViewController, UITableViewDelegate, U
         self.present(alertController, animated: true, completion: nil)
        
     }
-    
-    @IBAction func infoBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "affirmationBuilderToInfo", sender: self)
-    }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
