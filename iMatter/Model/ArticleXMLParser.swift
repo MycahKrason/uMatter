@@ -8,72 +8,70 @@
 
 import Foundation
 
-class ArticleXMLParser: NSObject, XMLParserDelegate{
-    
+class ArticleXMLParser: NSObject, XMLParserDelegate {
     var xmlParser: XMLParser?
     var articles: [ArticleData] = []
-    var xmlText : String = ""
+    var xmlText: String = ""
     var currentArticle: ArticleData?
-    
-    init(withXML xml: String){
-        if let data = xml.data(using: String.Encoding.utf8){
+
+    init(withXML xml: String) {
+        if let data = xml.data(using: String.Encoding.utf8) {
             xmlParser = XMLParser(data: data)
         }
     }
-    
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        
+
+    func parser(_ parser: XMLParser,
+                didStartElement elementName: String,
+                namespaceURI: String?,
+                qualifiedName qName: String?,
+                attributes attributeDict: [String: String] = [:]) {
         xmlText = ""
         if elementName == "item"{
             currentArticle = ArticleData()
         }
-        
     }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
+
+    func parser(_ parser: XMLParser,
+                didEndElement elementName: String,
+                namespaceURI: String?,
+                qualifiedName qName: String?) {
+
         if elementName == "title"{
             currentArticle?.title = xmlText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
         }
-        
+
         if elementName == "link"{
             currentArticle?.link = xmlText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
         }
-        
+
         //This will grab the image
-        if elementName == "description"{
-            
-            currentArticle?.image = xmlText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).slice(from: "src=\"", to: "\"")!
-            
+        if elementName == "description" {
+            currentArticle?.image = xmlText.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+                .slice(from: "src=\"", toString: "\"")!
         }
-        
-        if elementName == "item"{
-            if let article = currentArticle{
+
+        if elementName == "item" {
+            if let article = currentArticle {
                 articles.append(article)
             }
         }
-        
     }
-    
+
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         xmlText += string
     }
-    
-    func parse() -> [ArticleData]{
+
+    func parse() -> [ArticleData] {
         xmlParser?.delegate = self
         xmlParser?.parse()
         return articles
     }
-    
 }
 
-
 extension String {
-
-    func slice(from: String, to: String) -> String? {
-
+    func slice(from: String, toString: String) -> String? {
         return (range(of: from)?.upperBound).flatMap { substringFrom in
-            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+            (range(of: toString, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
                 String(self[substringFrom..<substringTo])
             }
         }

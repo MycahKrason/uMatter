@@ -9,24 +9,24 @@
 import UIKit
 
 class InfoButtonView: NSObject {
-    
-    var vc: UIViewController
+    var vcView: UIViewController
     var segueIdentifier: String
-    
-    init(vc: UIViewController, segueIdentifier: String) {
-        self.vc = vc
+
+    init(vcView: UIViewController, segueIdentifier: String) {
+        self.vcView = vcView
         self.segueIdentifier = segueIdentifier
     }
-    
+
     func addInfoButton() {
-        let infoButton = UIBarButtonItem.init(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(segueToInfo))
-        vc.navigationItem.rightBarButtonItem = infoButton
-        
+        let infoButton = UIBarButtonItem.init(image: UIImage(systemName: "info.circle"),
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(segueToInfo))
+        vcView.navigationItem.rightBarButtonItem = infoButton
         print("\n\nSetUp the info\n\n")
-        
     }
-    
+
     @objc func segueToInfo() {
-        vc.performSegue(withIdentifier: segueIdentifier, sender: self)
+        vcView.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }

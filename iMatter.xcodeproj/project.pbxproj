@@ -314,6 +314,7 @@
 				774D0500236D1E450099426F /* Frameworks */,
 				774D0501236D1E450099426F /* Resources */,
 				A81B3E57A05B6C2EFD687D5E /* [CP] Embed Pods Frameworks */,
+				C03D70FA253256E7007BF960 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -430,6 +431,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iMatter/Pods-iMatter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C03D70FA253256E7007BF960 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config .swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

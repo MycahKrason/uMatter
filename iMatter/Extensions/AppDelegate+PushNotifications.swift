@@ -8,40 +8,36 @@
 
 import UserNotifications
 import Firebase
-import UserNotifications
 import FirebaseInstanceID
 import FirebaseMessaging
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
     
-    @available(iOS 10.0, *)
-        func userNotificationCenter(_ center: UNUserNotificationCenter,  willPresent notification: UNNotification, withCompletionHandler   completionHandler: @escaping (_ options:   UNNotificationPresentationOptions) -> Void) {
-      completionHandler([.alert, .badge, .sound])
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (_ options: UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        
-    }
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {}
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
-    }
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {}
     
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        
-    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
     
     // Register for push notifications
     func registerForPushNotification() {
         if #available(iOS 10.0, *) {
             let center  = UNUserNotificationCenter.current()
             center.delegate = self
-            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+            center.requestAuthorization(options: [.sound, .alert, .badge]) { (_, error) in
                 if error == nil {
                     DispatchQueue.main.async {
                         UIApplication.shared.registerForRemoteNotifications()
@@ -60,7 +56,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("\n\nscheduleNotification\n\n")
         //Clear notifications
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-
+        
         //Schedule new notifications
         for count in 0...60 {
             let dayTimeInterval = Double(count)
@@ -73,7 +69,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             
             //Set up Trigger
             let targetDate = Date().addingTimeInterval(86400 * dayTimeInterval)
-            var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate)
+            var dateComponents = Calendar.current.dateComponents([
+                                                                    .year,
+                                                                    .month,
+                                                                    .day,
+                                                                    .hour,
+                                                                    .minute,
+                                                                    .second], from: targetDate)
             dateComponents.hour = 10
             dateComponents.minute = 30
             
@@ -81,7 +83,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             
             //Set up request
             let request = UNNotificationRequest(identifier: "\(count)", content: notificationContent, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error : Error?) in
+            UNUserNotificationCenter.current().add(request) { (error: Error?) in
                 if let err = error {
                     print("\nThere was an error adding request: \(err)")
                 }
@@ -91,7 +93,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate: MessagingDelegate {
-    
     func application(received remoteMessage: MessagingRemoteMessage) {
     }
     

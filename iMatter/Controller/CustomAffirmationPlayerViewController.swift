@@ -5,14 +5,11 @@
 //  Created by Mycah on 11/26/19.
 //  Copyright © 2019 Mycah Krason. All rights reserved.
 //
-
-import UIKit
-
 import UIKit
 import AVFoundation
 
 class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDelegate {
-
+    
     @IBOutlet weak var repeatBtnDisplay: UIImageView!
     @IBOutlet weak var playPauseBtnDisplay: UIImageView!
     @IBOutlet weak var affirmationDuration: UILabel!
@@ -20,19 +17,19 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
     @IBOutlet weak var affirmationSliderDisplay: UISlider!
     
     private var currentAffirmationCount = 0
-    var receivedArray : [SelectedAffirmation] = [SelectedAffirmation]()
-    var receivedAmbience : String?
+    var receivedArray: [SelectedAffirmation] = [SelectedAffirmation]()
+    var receivedAmbience: String?
     private var isOnRepeat = false
     
     private var affirmationPlayer: AVPlayer?
     private var ambiencePlayer: AVAudioPlayer?
     
+    // swiftlint:disable:next function_body_length
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Builder Player"
-        
         repeatBtnDisplay.tintColor = UIColor.darkGray
         
         //Play Affirmations
@@ -43,41 +40,42 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
         //Play Music
         if receivedAmbience == "Summer"{
             playAmbienceTrack(trackName: "Summer")
-        }else if receivedAmbience == "Creative Minds"{
+        } else if receivedAmbience == "Creative Minds" {
             playAmbienceTrack(trackName: "CreativeMinds")
-        }else if receivedAmbience == "Better Days" {
+        } else if receivedAmbience == "Better Days" {
             playAmbienceTrack(trackName: "BetterDays")
-        }else if receivedAmbience == "Acoustic Breeze"{
+        } else if receivedAmbience == "Acoustic Breeze" {
             playAmbienceTrack(trackName: "AcousticBreeze")
-        }else if receivedAmbience == "Birth of a Hero"{
+        } else if receivedAmbience == "Birth of a Hero" {
             playAmbienceTrack(trackName: "BirthOfAHero")
-        }else if receivedAmbience == "Energy"{
+        } else if receivedAmbience == "Energy" {
             playAmbienceTrack(trackName: "Energy")
-        }else if receivedAmbience == "Inspire"{
+        } else if receivedAmbience == "Inspire" {
             playAmbienceTrack(trackName: "Inspire")
-        }else if receivedAmbience == "Memories"{
+        } else if receivedAmbience == "Memories" {
             playAmbienceTrack(trackName: "Memories")
-        }else if receivedAmbience == "Perception"{
+        } else if receivedAmbience == "Perception" {
             playAmbienceTrack(trackName: "Perception")
-        }else if receivedAmbience == "Going Higher"{
+        } else if receivedAmbience == "Going Higher" {
             playAmbienceTrack(trackName: "GoingHigher")
-        }else if receivedAmbience == "Slow Motion"{
+        } else if receivedAmbience == "Slow Motion" {
             playAmbienceTrack(trackName: "SlowMotion")
-        }else if receivedAmbience == "Elevate"{
+        } else if receivedAmbience == "Elevate" {
             playAmbienceTrack(trackName: "Elevate")
         }
-            
+        
         //Play Nature
-        else if receivedAmbience == "Forest"{
+        else if receivedAmbience == "Forest" {
             playAmbienceTrack(trackName: "Forest")
-        }else if receivedAmbience == "Ocean"{
+        } else if receivedAmbience == "Ocean" {
             playAmbienceTrack(trackName: "Ocean")
-        }else if receivedAmbience == "Rain"{
+        } else if receivedAmbience == "Rain" {
             playAmbienceTrack(trackName: "Rain")
-        }else if receivedAmbience == "Fireplace"{
+        } else if receivedAmbience == "Fireplace" {
             playAmbienceTrack(trackName: "Fireplace")
-        }else{
-            //You would have received a request to not play any background sound - you need to manually set the pause button
+        } else {
+            //You would have received a request to not play any background sound
+            //You need to manually set the pause button
             playPauseBtnDisplay.image = UIImage(systemName: "pause")
         }
         
@@ -97,21 +95,24 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
         }
         
         //receive notification when audio stops
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didPlayToEnd), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.didPlayToEnd),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: nil)
         
         //Get notified when done sliding
-        affirmationSliderDisplay.addTarget(self, action: #selector(sliderDidEndSliding), for: [.touchUpInside, .touchUpOutside])
-
+        affirmationSliderDisplay.addTarget(self,
+                                           action: #selector(sliderDidEndSliding),
+                                           for: [.touchUpInside, .touchUpOutside])
     }
     
-    func playAffirmationTrack(){
+    func playAffirmationTrack() {
         //Not exactly sure the reason for this - but the delegate needs to be called here instead of viewdidload
         ambiencePlayer?.delegate = self
         
         if receivedArray.count > 0 {
-            
             //play the Affirmation
-            if currentAffirmationCount < receivedArray.count{
+            if currentAffirmationCount < receivedArray.count {
                 let url = URL.init(string: receivedArray[currentAffirmationCount].audio!)
                 affirmationPlayer = AVPlayer.init(url: url!)
                 affirmationPlayer?.play()
@@ -120,24 +121,20 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
             //Set slider activity
             affirmationSliderDisplay.value = Float(currentAffirmationCount) / Float(receivedArray.count - 1)
             
-            if (currentAffirmationCount + 1) > receivedArray.count{
+            if (currentAffirmationCount + 1) > receivedArray.count {
                 currentAffirmationDisplay.text = "\(currentAffirmationCount)"
-            }else{
+            } else {
                 currentAffirmationDisplay.text = "\(currentAffirmationCount + 1)"
             }
-            
         }
-        
     }
     
-    fileprivate func playAmbienceTrack(trackName: String){
-        
-        
+    fileprivate func playAmbienceTrack(trackName: String) {
         let soundURL = Bundle.main.url(forResource: trackName, withExtension: "mp3")
         
-        do{
+        do {
             ambiencePlayer = try AVAudioPlayer(contentsOf: soundURL!)
-        }catch{
+        } catch {
             print(error)
         }
         
@@ -147,13 +144,10 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
     }
     
     @objc func didPlayToEnd() {
-        
-        if currentAffirmationCount < receivedArray.count - 1{
-            
+        if currentAffirmationCount < receivedArray.count - 1 {
             currentAffirmationCount += 1
             playAffirmationTrack()
-            
-        }else{
+        } else {
             //Playlist is over, reset affirmation track
             currentAffirmationCount = 0
             
@@ -161,37 +155,31 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
             affirmationSliderDisplay.value = Float(currentAffirmationCount) / Float(receivedArray.count - 1)
             currentAffirmationDisplay.text = "\(currentAffirmationCount + 1)"
             
-            if !isOnRepeat{
+            if !isOnRepeat {
                 playPauseBtnDisplay.image = UIImage(systemName: "play")
                 ambiencePlayer?.setVolume(0, fadeDuration: 3)
-            }else{
+            } else {
                 playAffirmationTrack()
             }
-            
         }
-            
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if !ambiencePlayer!.isPlaying{
+        if !ambiencePlayer!.isPlaying {
             ambiencePlayer?.play()
         }
-        
         print("\n\nFinished\n\n")
     }
     
     @IBAction func affirmationSliderChanged(_ sender: Any) {
-        
         affirmationPlayer?.pause()
         ambiencePlayer?.pause()
-        
         
         let totalValForDisplay = receivedArray.count - 1
         let roundedVal = round((affirmationSliderDisplay.value * Float(totalValForDisplay)))
         
         currentAffirmationCount = Int(roundedVal)
         currentAffirmationDisplay.text = "\(Int(roundedVal) + 1)"
-        
     }
     
     @objc func sliderDidEndSliding() {
@@ -202,36 +190,30 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
     }
     
     @IBAction func playPauseBtnPressed(_ sender: Any) {
-        
         if affirmationPlayer?.timeControlStatus == .playing {
             affirmationPlayer?.pause()
             ambiencePlayer?.setVolume(0.5, fadeDuration: 0)
             ambiencePlayer?.pause()
             playPauseBtnDisplay.image = UIImage(systemName: "play")
         } else if affirmationPlayer?.timeControlStatus == .paused {
-            
             playAffirmationTrack()
             ambiencePlayer?.setVolume(0.5, fadeDuration: 0)
             ambiencePlayer?.play()
             playPauseBtnDisplay.image = UIImage(systemName: "pause")
         }
-        
     }
     
     @IBAction func repeatBtnPressed(_ sender: Any) {
-        
-        if isOnRepeat{
+        if isOnRepeat {
             isOnRepeat = false
             repeatBtnDisplay.tintColor = UIColor.darkGray
-        }else{
+        } else {
             isOnRepeat = true
             repeatBtnDisplay.tintColor = UIColor.white
         }
-        
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }

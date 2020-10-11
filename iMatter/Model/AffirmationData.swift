@@ -8,13 +8,11 @@
 
 import Foundation
 
-struct AffirmationData{
-    var id : String
-    var title : String
-    var audio : String
-    var time : String?
-    
-    var favorite : Bool = false
-    
-}
+struct AffirmationData {
+    var affirmationID: String
+    var title: String
+    var audio: String
+    var time: String?
 
+    var favorite: Bool = false
+}

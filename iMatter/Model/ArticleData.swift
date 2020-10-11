@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArticleData{
+class ArticleData {
     var title = ""
     var link = ""
     var image = ""

@@ -16,6 +16,8 @@ target 'iMatter' do
   pod 'FirebaseFirestoreSwift'  
   pod 'Firebase/Core'
 
+  pod 'SwiftLint', '~> 0.27'
+
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 end
