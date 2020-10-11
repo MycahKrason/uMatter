@@ -20,11 +20,11 @@ struct AES {
     private let key: Data
     private let ivSize: Int         = kCCBlockSizeAES128
     private let options: CCOptions  = CCOptions(kCCOptionPKCS7Padding)
-    
+
     init() throws {
         guard let keyString64 = Private().encryptionKey?.data(using: .ascii)!.sha256 else {throw Error.noEncryptionKey}
         let keyString = keyString64.prefix(32)
-        
+
         guard keyString.count == kCCKeySizeAES256 else {throw Error.invalidKeySize}
         self.key = Data(keyString.utf8)
     }
@@ -47,13 +47,13 @@ private extension AES {
             guard let dataBytesBaseAddress = dataBytes.baseAddress else {
                 throw Error.generateRandomIVFailed
             }
-            
+
             let status: Int32 = SecRandomCopyBytes(
                 kSecRandomDefault,
                 kCCBlockSizeAES128,
                 dataBytesBaseAddress
             )
-            
+
             guard status == 0 else {
                 throw Error.generateRandomIVFailed
             }
@@ -77,7 +77,7 @@ extension AES: Cryptable {
                               let bufferBytesBaseAddress = bufferBytes.baseAddress else {
                             throw Error.encryptionFailed
                         }
-                        
+
                         let cryptStatus: CCCryptorStatus = CCCrypt( // Stateless, one-shot encrypt operation
                             CCOperation(kCCEncrypt),                // op: CCOperation
                             CCAlgorithm(kCCAlgorithmAES),           // alg: CCAlgorithm
@@ -91,7 +91,7 @@ extension AES: Cryptable {
                             bufferSize,                             // dataOutAvailable: encrypted Data buffer size
                             &numberBytesEncrypted                   // dataOutMoved: the number of bytes written
                         )
-                        
+
                         guard cryptStatus == CCCryptorStatus(kCCSuccess) else {
                             throw Error.encryptionFailed
                         }
@@ -101,11 +101,11 @@ extension AES: Cryptable {
         } catch {
             throw Error.encryptionFailed
         }
-        
+
         let encryptedData: Data = buffer[..<(numberBytesEncrypted + ivSize)]
         return encryptedData
     }
-    
+
     func decrypt(_ data: Data) throws -> String {
         let bufferSize: Int = data.count - ivSize
         var buffer = Data(count: bufferSize)
@@ -132,7 +132,7 @@ extension AES: Cryptable {
                             bufferSize,                             // dataOutAvailable: decrypted Data buffer size
                             &numberBytesDecrypted                   // dataOutMoved: the number of bytes written
                         )
-                        
+
                         guard cryptStatus == CCCryptorStatus(kCCSuccess) else {
                             throw Error.decryptionFailed
                         }
@@ -142,12 +142,12 @@ extension AES: Cryptable {
         } catch {
             throw Error.encryptionFailed
         }
-        
+
         let decryptedData: Data = buffer[..<numberBytesDecrypted]
         guard let decryptedString = String(data: decryptedData, encoding: .utf8) else {
             throw Error.dataToStringFailed
         }
-        
+
         return decryptedString
     }
 }
@@ -164,7 +164,7 @@ extension Data {
             return hexString(digest.makeIterator())
         }
     }
-    
+
     private func hexString(_ iterator: Array<UInt8>.Iterator) -> String {
         return iterator.map { String(format: "%02x", $0) }.joined()
     }

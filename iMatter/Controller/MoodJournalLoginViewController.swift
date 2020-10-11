@@ -146,7 +146,7 @@ class MoodJournalLoginViewController: UIViewController {
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     // MARK: keyboard
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0

@@ -229,7 +229,7 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
                 //Clear the array
                 self.journalEntryArray = []
                 self.journalListTable.reloadData()
-                
+
                 do {
                     try Auth.auth().signOut()
                     self.loginBtnDisplay.setTitle("Login", for: .normal)

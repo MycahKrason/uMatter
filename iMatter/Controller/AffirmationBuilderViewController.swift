@@ -322,7 +322,7 @@ extension AffirmationBuilderViewController: UIPickerViewDataSource, UIPickerView
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         chosenAmbience = ambientMusicArray[row]
-        
+
         if segmentDisplay.selectedSegmentIndex == 0 {
             chosenAmbience = ambientMusicArray[row]
         } else if segmentDisplay.selectedSegmentIndex == 1 {

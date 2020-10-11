@@ -11,41 +11,41 @@ import CoreData
 
 class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate {
     @IBOutlet weak var affirmationTableView: UITableView!
-    
+
     var recievedCategory: String?
     private var affirmationsArray: [AffirmationData] = [AffirmationData]()
     private var favoritesArray: [FavoriteAffirmations] = [FavoriteAffirmations]()
-    
+
     //Context for Core Data
     weak var context: NSManagedObjectContext?
     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
-    
+
     var infoButton: InfoButtonView?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if let appDelegate = appDelegate {
             context = appDelegate.persistentContainer.viewContext
         }
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
-        
+
         infoButton = InfoButtonView(vcView: self, segueIdentifier: "affirmationPlayListToInfo")
         if let infoBtn = infoButton {
             infoBtn.addInfoButton()
         }
-        
+
         //Set up the display
         affirmationTableView.rowHeight = 70
         if let categoryTitle = recievedCategory {
             title = categoryTitle
         }
-        
+
         affirmationTableView.delegate = self
         affirmationTableView.dataSource = self
-        
+
         affirmationTableView.register(UINib(nibName: "CustomAffirmationsCell", bundle: nil),
                                       forCellReuseIdentifier: "CustomAffirmationsCell")
-        
+
         if recievedCategory != "Favorites"{
             RetrieveAffirmations().getAffirmations(apiPath: (recievedCategory?.lowercased())!,
                                                    completion: { _, result in
@@ -58,7 +58,7 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
         //Load the saved Favorite Artists
         loadFavoriteAffirmationsFromCD()
     }
-    
+
     //Save to Core Data
     fileprivate func saveFavoriteAffirmationsToCD() {
         do {
@@ -67,7 +67,7 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
             print("Error Saving Coontent to Core Data")
         }
     }
-    
+
     //Load from Core Data
     fileprivate func loadFavoriteAffirmationsFromCD() {
         print("\n\nloadFavoriteAffirmationsFromCD\n\n")
@@ -80,12 +80,12 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
             print("Unable to Load Saved Favorite Artists - \(error)")
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAudioPlayer"{
             if let indexPath = affirmationTableView.indexPathForSelectedRow {
                 guard let destVC = segue.destination as? AudioPlayerViewController else {return}
-                
+
                 if recievedCategory != "Favorites"{
                     destVC.stringURLRecieved = affirmationsArray[indexPath.row].audio
                     destVC.audioTitle = affirmationsArray[indexPath.row].title
@@ -99,7 +99,7 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
             destVC.receivedTitle = "Play List Info"
         }
     }
-    
+
     func favoriteBtnSelected(cell: UITableViewCell) {
         let indexPathClickedOn = affirmationTableView.indexPath(for: cell)
         if recievedCategory != "Favorites" {
@@ -109,7 +109,7 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
                 var favoriteMatch: Bool = false
                 var removeAtIndex: Int?
                 for (index, favs) in favoritesArray.enumerated() {
-                    
+
                     if favs.id == affirmationsArray[indexPathClickedOn![1]].affirmationID {
                         favoriteMatch = true
                         removeAtIndex = index
@@ -117,15 +117,15 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
                     } else {
                         print("NO Match")
                     }
-                    
+
                 }
-                
+
                 if favoriteMatch == true {
                     /*If safeFavoriteMatch is true
                      - then there is already a favorite, and you don't want to add another
                      - but should instead delete it */
                     affirmationsArray[indexPathClickedOn![1]].favorite = false
-                    
+
                     if let safeRemoveAtIndex = removeAtIndex {
                         context?.delete(favoritesArray[safeRemoveAtIndex])
                         favoritesArray.remove(at: safeRemoveAtIndex)
@@ -153,11 +153,11 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
         }
         affirmationTableView.reloadData()
     }
-    
+
     fileprivate func addAffirmationToFavorites(indexPath: IndexPath) {
         guard let context = context else {return}
         let favoriteAffirmation = FavoriteAffirmations(context: context)
-        
+
         favoriteAffirmation.id = affirmationsArray[indexPath[1]].affirmationID
         favoriteAffirmation.title = affirmationsArray[indexPath[1]].title
         favoriteAffirmation.audio = affirmationsArray[indexPath[1]].audio
@@ -174,36 +174,36 @@ extension AffirmationsListViewController: UITableViewDelegate, UITableViewDataSo
                 .dequeueReusableCell(withIdentifier: cellString, for: indexPath) as? CustomAffirmationsCell else {
             return UITableViewCell()
         }
-        
+
         //Set the cell delegate
         cell.delegate = self
-        
+
         if recievedCategory != "Favorites"{
             //Set whether the cell is a Favorite
             for favs in favoritesArray where favs.id == affirmationsArray[indexPath.row].affirmationID {
                 affirmationsArray[indexPath.row].favorite = true
             }
-            
+
             if affirmationsArray[indexPath.row].favorite == true {
                 cell.favoriteBtnDisplay.image = UIImage(systemName: "circle.fill")
             } else {
                 cell.favoriteBtnDisplay.image = UIImage(systemName: "circle")
             }
-            
+
             //Set the title of the track and time
             cell.affirmationsDescription.text = affirmationsArray[indexPath.row].title
             cell.audioTimeDisplay.text = affirmationsArray[indexPath.row].time
         } else {
             //this is specifically for Favorites
             cell.favoriteBtnDisplay.image = UIImage(systemName: "circle.fill")
-            
+
             //Set the title of the track and time
             cell.affirmationsDescription.text = favoritesArray[indexPath.row].title
             cell.audioTimeDisplay.text = favoritesArray[indexPath.row].time
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Check if use is paying
         if true {
@@ -218,7 +218,7 @@ extension AffirmationsListViewController: UITableViewDelegate, UITableViewDataSo
         //            return 5
         //        }
     }
-    
+
     //Set up the Cells to be buttons to retrieve the modal
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //This will need further development once in app purchasing is set up

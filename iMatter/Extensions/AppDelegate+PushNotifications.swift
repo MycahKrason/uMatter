@@ -17,21 +17,21 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
-    
+
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (_ options: UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .badge, .sound])
     }
-    
+
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {}
-    
+
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {}
-    
+
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
-    
+
     // Register for push notifications
     func registerForPushNotification() {
         if #available(iOS 10.0, *) {
@@ -51,22 +51,22 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             UIApplication.shared.registerForRemoteNotifications()
         }
     }
-    
+
     func scheduleNotification() {
         print("\n\nscheduleNotification\n\n")
         //Clear notifications
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        
+
         //Schedule new notifications
         for count in 0...60 {
             let dayTimeInterval = Double(count)
-            
+
             //Set up content
             let notificationContent = UNMutableNotificationContent()
             notificationContent.title = "Daily Affirmation"
             notificationContent.body = ListOfAffirmations().listOfAllAffirmations.randomElement()!
             notificationContent.sound = .default
-            
+
             //Set up Trigger
             let targetDate = Date().addingTimeInterval(86400 * dayTimeInterval)
             var dateComponents = Calendar.current.dateComponents([
@@ -78,9 +78,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                                                     .second], from: targetDate)
             dateComponents.hour = 10
             dateComponents.minute = 30
-            
+
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            
+
             //Set up request
             let request = UNNotificationRequest(identifier: "\(count)", content: notificationContent, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { (error: Error?) in
@@ -95,7 +95,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 extension AppDelegate: MessagingDelegate {
     func application(received remoteMessage: MessagingRemoteMessage) {
     }
-    
+
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print(fcmToken)
     }

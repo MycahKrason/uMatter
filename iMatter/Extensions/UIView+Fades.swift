@@ -17,7 +17,7 @@ extension UIView {
                         self.alpha = 1.0 },
                        completion: nil)
     }
-    
+
     func fadeOut() {
         UIView.animate(withDuration: 1.0,
                        delay: 0.0,
