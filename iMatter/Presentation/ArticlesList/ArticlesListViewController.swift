@@ -14,8 +14,10 @@ class ArticlesListViewController: UIViewController {
 
     private var articleArray: [ArticleData] = [ArticleData]()
     var infoButton: InfoButtonView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        ArticlesListPresenter(vcView: self).presentScene()
         infoButton = InfoButtonView(vcView: self, segueIdentifier: "articleListToInfo")
         if let infoBtn = infoButton {
             infoBtn.addInfoButton()

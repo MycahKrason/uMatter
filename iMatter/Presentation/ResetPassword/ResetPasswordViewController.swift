@@ -16,6 +16,8 @@ class ResetPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ResetPasswordPresenter(vcView: self).presentScene()
+
         //Set up tap to dismiss keyboard
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(_:)))
         self.view.addGestureRecognizer(tap)

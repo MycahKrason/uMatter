@@ -64,6 +64,34 @@
 		77CDAE07238E0DAD00B561DF /* CustomTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */; };
 		77CDAE08238E0DAD00B561DF /* CustomTrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77CDAE06238E0DAD00B561DF /* CustomTrackCell.xib */; };
 		77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D926B92389D354007E7DDA /* CategoryAffirmationsViewController.swift */; };
+		C0F70F582532C8A30048F303 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F572532C8A30048F303 /* MainPresenter.swift */; };
+		C0F70F5B2532C8B80048F303 /* CategoryAffirmationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F5A2532C8B80048F303 /* CategoryAffirmationsPresenter.swift */; };
+		C0F70F5E2532C8C90048F303 /* AffirmationsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F5D2532C8C90048F303 /* AffirmationsListPresenter.swift */; };
+		C0F70F612532C8DC0048F303 /* AudioPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F602532C8DC0048F303 /* AudioPlayerPresenter.swift */; };
+		C0F70F642532C8FA0048F303 /* AffirmationBuilderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F632532C8FA0048F303 /* AffirmationBuilderPresenter.swift */; };
+		C0F70F672532C90C0048F303 /* CustomAffirmationPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F662532C90C0048F303 /* CustomAffirmationPlayerPresenter.swift */; };
+		C0F70F6A2532C9390048F303 /* ArticlesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F692532C9390048F303 /* ArticlesListPresenter.swift */; };
+		C0F70F6D2532C94A0048F303 /* ArticleDisplayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F6C2532C94A0048F303 /* ArticleDisplayPresenter.swift */; };
+		C0F70F702532C95E0048F303 /* MoodJournalSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F6F2532C95E0048F303 /* MoodJournalSelectionPresenter.swift */; };
+		C0F70F732532C96F0048F303 /* MoodJournalLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F722532C96F0048F303 /* MoodJournalLoginPresenter.swift */; };
+		C0F70F762532C9870048F303 /* MoodJournalEntryFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F752532C9870048F303 /* MoodJournalEntryFormPresenter.swift */; };
+		C0F70F792532C9A00048F303 /* TermsAndPrivacyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F782532C9A00048F303 /* TermsAndPrivacyPresenter.swift */; };
+		C0F70F7C2532C9D20048F303 /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F7B2532C9D20048F303 /* ResetPasswordPresenter.swift */; };
+		C0F70F7F2532C9F20048F303 /* InAppSubscriptionModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F7E2532C9F20048F303 /* InAppSubscriptionModalPresenter.swift */; };
+		C0F70F8225337DD60048F303 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70F8125337DD60048F303 /* MainViewManager.swift */; };
+		C0FAACBA253395C900ECEC3F /* CategoryAffirmationsViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACB9253395C900ECEC3F /* CategoryAffirmationsViewManager.swift */; };
+		C0FAACBD253395DC00ECEC3F /* AffirmationsListViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACBC253395DC00ECEC3F /* AffirmationsListViewManager.swift */; };
+		C0FAACC0253395F200ECEC3F /* AudioPlayerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACBF253395F200ECEC3F /* AudioPlayerViewManager.swift */; };
+		C0FAACC32533960500ECEC3F /* AffirmationBuilderViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACC22533960500ECEC3F /* AffirmationBuilderViewManager.swift */; };
+		C0FAACC62533961900ECEC3F /* CustomAffirmationPlayerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACC52533961900ECEC3F /* CustomAffirmationPlayerViewManager.swift */; };
+		C0FAACC92533962C00ECEC3F /* ArticlesListViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACC82533962C00ECEC3F /* ArticlesListViewManager.swift */; };
+		C0FAACCC2533963D00ECEC3F /* ArticleDisplayViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACCB2533963D00ECEC3F /* ArticleDisplayViewManager.swift */; };
+		C0FAACCF2533964C00ECEC3F /* MoodJournalSelectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACCE2533964C00ECEC3F /* MoodJournalSelectionViewManager.swift */; };
+		C0FAACD22533965D00ECEC3F /* MoodJournalLoginViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACD12533965D00ECEC3F /* MoodJournalLoginViewManager.swift */; };
+		C0FAACD52533966D00ECEC3F /* MoodJournalEntryFormViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACD42533966D00ECEC3F /* MoodJournalEntryFormViewManager.swift */; };
+		C0FAACD82533967C00ECEC3F /* TermsAndPrivacyViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACD72533967C00ECEC3F /* TermsAndPrivacyViewManager.swift */; };
+		C0FAACDB2533968D00ECEC3F /* ResetPasswordViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACDA2533968D00ECEC3F /* ResetPasswordViewManager.swift */; };
+		C0FAACDE2533969F00ECEC3F /* InAppSubscriptionModalViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAACDD2533969F00ECEC3F /* InAppSubscriptionModalViewManager.swift */; };
 		C0FF80B1253141C200D83744 /* InfoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF80B0253141C200D83744 /* InfoButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +156,34 @@
 		77CDAE05238E0DAD00B561DF /* CustomTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrackCell.swift; sourceTree = "<group>"; };
 		77CDAE06238E0DAD00B561DF /* CustomTrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTrackCell.xib; sourceTree = "<group>"; };
 		77D926B92389D354007E7DDA /* CategoryAffirmationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAffirmationsViewController.swift; sourceTree = "<group>"; };
+		C0F70F572532C8A30048F303 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		C0F70F5A2532C8B80048F303 /* CategoryAffirmationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAffirmationsPresenter.swift; sourceTree = "<group>"; };
+		C0F70F5D2532C8C90048F303 /* AffirmationsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsListPresenter.swift; sourceTree = "<group>"; };
+		C0F70F602532C8DC0048F303 /* AudioPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPresenter.swift; sourceTree = "<group>"; };
+		C0F70F632532C8FA0048F303 /* AffirmationBuilderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationBuilderPresenter.swift; sourceTree = "<group>"; };
+		C0F70F662532C90C0048F303 /* CustomAffirmationPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAffirmationPlayerPresenter.swift; sourceTree = "<group>"; };
+		C0F70F692532C9390048F303 /* ArticlesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListPresenter.swift; sourceTree = "<group>"; };
+		C0F70F6C2532C94A0048F303 /* ArticleDisplayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDisplayPresenter.swift; sourceTree = "<group>"; };
+		C0F70F6F2532C95E0048F303 /* MoodJournalSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalSelectionPresenter.swift; sourceTree = "<group>"; };
+		C0F70F722532C96F0048F303 /* MoodJournalLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalLoginPresenter.swift; sourceTree = "<group>"; };
+		C0F70F752532C9870048F303 /* MoodJournalEntryFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalEntryFormPresenter.swift; sourceTree = "<group>"; };
+		C0F70F782532C9A00048F303 /* TermsAndPrivacyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyPresenter.swift; sourceTree = "<group>"; };
+		C0F70F7B2532C9D20048F303 /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		C0F70F7E2532C9F20048F303 /* InAppSubscriptionModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppSubscriptionModalPresenter.swift; sourceTree = "<group>"; };
+		C0F70F8125337DD60048F303 /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
+		C0FAACB9253395C900ECEC3F /* CategoryAffirmationsViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAffirmationsViewManager.swift; sourceTree = "<group>"; };
+		C0FAACBC253395DC00ECEC3F /* AffirmationsListViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsListViewManager.swift; sourceTree = "<group>"; };
+		C0FAACBF253395F200ECEC3F /* AudioPlayerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewManager.swift; sourceTree = "<group>"; };
+		C0FAACC22533960500ECEC3F /* AffirmationBuilderViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationBuilderViewManager.swift; sourceTree = "<group>"; };
+		C0FAACC52533961900ECEC3F /* CustomAffirmationPlayerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAffirmationPlayerViewManager.swift; sourceTree = "<group>"; };
+		C0FAACC82533962C00ECEC3F /* ArticlesListViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewManager.swift; sourceTree = "<group>"; };
+		C0FAACCB2533963D00ECEC3F /* ArticleDisplayViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDisplayViewManager.swift; sourceTree = "<group>"; };
+		C0FAACCE2533964C00ECEC3F /* MoodJournalSelectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalSelectionViewManager.swift; sourceTree = "<group>"; };
+		C0FAACD12533965D00ECEC3F /* MoodJournalLoginViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalLoginViewManager.swift; sourceTree = "<group>"; };
+		C0FAACD42533966D00ECEC3F /* MoodJournalEntryFormViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalEntryFormViewManager.swift; sourceTree = "<group>"; };
+		C0FAACD72533967C00ECEC3F /* TermsAndPrivacyViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewManager.swift; sourceTree = "<group>"; };
+		C0FAACDA2533968D00ECEC3F /* ResetPasswordViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewManager.swift; sourceTree = "<group>"; };
+		C0FAACDD2533969F00ECEC3F /* InAppSubscriptionModalViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppSubscriptionModalViewManager.swift; sourceTree = "<group>"; };
 		C0FF80B0253141C200D83744 /* InfoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonView.swift; sourceTree = "<group>"; };
 		D47EC3C3458F73E17954B19C /* Pods-iMatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMatter.debug.xcconfig"; path = "Target Support Files/Pods-iMatter/Pods-iMatter.debug.xcconfig"; sourceTree = "<group>"; };
 		D8310223E870DDE962D17337 /* Pods_iMatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,7 +243,7 @@
 				77B45F4D239312290067FE1C /* Sounds */,
 				776246AB236D30A8003C2D6A /* Extensions */,
 				776246AA236D2917003C2D6A /* iMatter.entitlements */,
-				774D051C236D1E660099426F /* Controller */,
+				774D051C236D1E660099426F /* Presentation */,
 				774D051B236D1E590099426F /* View */,
 				774D051A236D1E510099426F /* Model */,
 				774D0506236D1E450099426F /* AppDelegate.swift */,
@@ -231,25 +287,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		774D051C236D1E660099426F /* Controller */ = {
+		774D051C236D1E660099426F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				774D050A236D1E450099426F /* ViewController.swift */,
-				779D25E523820B030049CB8D /* AffirmationsListViewController.swift */,
-				779D25E723820FB40049CB8D /* AudioPlayerViewController.swift */,
-				77D926B92389D354007E7DDA /* CategoryAffirmationsViewController.swift */,
-				77CDAE01238A550800B561DF /* AffirmationBuilderViewController.swift */,
-				77CDAE03238E06F900B561DF /* CustomAffirmationPlayerViewController.swift */,
-				77B45F5A23960F480067FE1C /* InAppSubscriptionModalViewController.swift */,
-				774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */,
-				773584E723D68C270030FCBF /* ArticlesListViewController.swift */,
-				773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */,
-				7728C33F23FB204900E3FC66 /* MoodJournalSelectionViewController.swift */,
-				7728C34123FB207C00E3FC66 /* MoodJournalLoginViewController.swift */,
-				77C4D61024005EC500590EBC /* MoodJournalEntryFormViewController.swift */,
-				775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */,
+				C0F70F2B2532C3F60048F303 /* MainView */,
+				C0F70F2D2532C45A0048F303 /* CategoryAffirmations */,
+				C0F70F2C2532C40C0048F303 /* AffirmationsList */,
+				C0F70F4B2532C5F00048F303 /* AudioPlayer */,
+				C0F70F4A2532C5D00048F303 /* AffirmationBuilder */,
+				C0F70F4C2532C63A0048F303 /* CustomAffirmationPlayer */,
+				C0F70F4D2532C6650048F303 /* ArticlesList */,
+				C0F70F4E2532C6850048F303 /* ArticleDisplay */,
+				C0F70F502532C6CA0048F303 /* MoodJournalSelection */,
+				C0F70F512532C6EB0048F303 /* MoodJournalLogin */,
+				C0F70F522532C7030048F303 /* MoodJournalEntryForm */,
+				C0F70F532532C7270048F303 /* TermsAndPrivacy */,
+				C0F70F542532C73B0048F303 /* ResetPassword */,
+				C0F70F552532C7500048F303 /* InAppSubscriptionModal */,
 			);
-			path = Controller;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		77536923250D82FB00466251 /* Encryption */ = {
@@ -300,6 +356,146 @@
 				0D9A06F3DE96CA9822847A95 /* Pods-iMatter.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C0F70F2B2532C3F60048F303 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				774D050A236D1E450099426F /* ViewController.swift */,
+				C0F70F572532C8A30048F303 /* MainPresenter.swift */,
+				C0F70F8125337DD60048F303 /* MainViewManager.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		C0F70F2C2532C40C0048F303 /* AffirmationsList */ = {
+			isa = PBXGroup;
+			children = (
+				779D25E523820B030049CB8D /* AffirmationsListViewController.swift */,
+				C0F70F5D2532C8C90048F303 /* AffirmationsListPresenter.swift */,
+				C0FAACBC253395DC00ECEC3F /* AffirmationsListViewManager.swift */,
+			);
+			path = AffirmationsList;
+			sourceTree = "<group>";
+		};
+		C0F70F2D2532C45A0048F303 /* CategoryAffirmations */ = {
+			isa = PBXGroup;
+			children = (
+				77D926B92389D354007E7DDA /* CategoryAffirmationsViewController.swift */,
+				C0F70F5A2532C8B80048F303 /* CategoryAffirmationsPresenter.swift */,
+				C0FAACB9253395C900ECEC3F /* CategoryAffirmationsViewManager.swift */,
+			);
+			path = CategoryAffirmations;
+			sourceTree = "<group>";
+		};
+		C0F70F4A2532C5D00048F303 /* AffirmationBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				77CDAE01238A550800B561DF /* AffirmationBuilderViewController.swift */,
+				C0F70F632532C8FA0048F303 /* AffirmationBuilderPresenter.swift */,
+				C0FAACC22533960500ECEC3F /* AffirmationBuilderViewManager.swift */,
+			);
+			path = AffirmationBuilder;
+			sourceTree = "<group>";
+		};
+		C0F70F4B2532C5F00048F303 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				779D25E723820FB40049CB8D /* AudioPlayerViewController.swift */,
+				C0F70F602532C8DC0048F303 /* AudioPlayerPresenter.swift */,
+				C0FAACBF253395F200ECEC3F /* AudioPlayerViewManager.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		C0F70F4C2532C63A0048F303 /* CustomAffirmationPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				77CDAE03238E06F900B561DF /* CustomAffirmationPlayerViewController.swift */,
+				C0F70F662532C90C0048F303 /* CustomAffirmationPlayerPresenter.swift */,
+				C0FAACC52533961900ECEC3F /* CustomAffirmationPlayerViewManager.swift */,
+			);
+			path = CustomAffirmationPlayer;
+			sourceTree = "<group>";
+		};
+		C0F70F4D2532C6650048F303 /* ArticlesList */ = {
+			isa = PBXGroup;
+			children = (
+				773584E723D68C270030FCBF /* ArticlesListViewController.swift */,
+				C0F70F692532C9390048F303 /* ArticlesListPresenter.swift */,
+				C0FAACC82533962C00ECEC3F /* ArticlesListViewManager.swift */,
+			);
+			path = ArticlesList;
+			sourceTree = "<group>";
+		};
+		C0F70F4E2532C6850048F303 /* ArticleDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				773584EF23D7F0150030FCBF /* ArticleDisplayViewController.swift */,
+				C0F70F6C2532C94A0048F303 /* ArticleDisplayPresenter.swift */,
+				C0FAACCB2533963D00ECEC3F /* ArticleDisplayViewManager.swift */,
+			);
+			path = ArticleDisplay;
+			sourceTree = "<group>";
+		};
+		C0F70F502532C6CA0048F303 /* MoodJournalSelection */ = {
+			isa = PBXGroup;
+			children = (
+				7728C33F23FB204900E3FC66 /* MoodJournalSelectionViewController.swift */,
+				C0F70F6F2532C95E0048F303 /* MoodJournalSelectionPresenter.swift */,
+				C0FAACCE2533964C00ECEC3F /* MoodJournalSelectionViewManager.swift */,
+			);
+			path = MoodJournalSelection;
+			sourceTree = "<group>";
+		};
+		C0F70F512532C6EB0048F303 /* MoodJournalLogin */ = {
+			isa = PBXGroup;
+			children = (
+				7728C34123FB207C00E3FC66 /* MoodJournalLoginViewController.swift */,
+				C0F70F722532C96F0048F303 /* MoodJournalLoginPresenter.swift */,
+				C0FAACD12533965D00ECEC3F /* MoodJournalLoginViewManager.swift */,
+			);
+			path = MoodJournalLogin;
+			sourceTree = "<group>";
+		};
+		C0F70F522532C7030048F303 /* MoodJournalEntryForm */ = {
+			isa = PBXGroup;
+			children = (
+				77C4D61024005EC500590EBC /* MoodJournalEntryFormViewController.swift */,
+				C0F70F752532C9870048F303 /* MoodJournalEntryFormPresenter.swift */,
+				C0FAACD42533966D00ECEC3F /* MoodJournalEntryFormViewManager.swift */,
+			);
+			path = MoodJournalEntryForm;
+			sourceTree = "<group>";
+		};
+		C0F70F532532C7270048F303 /* TermsAndPrivacy */ = {
+			isa = PBXGroup;
+			children = (
+				774F7D89239D76B3009A69D2 /* TermsAndPrivacyViewController.swift */,
+				C0F70F782532C9A00048F303 /* TermsAndPrivacyPresenter.swift */,
+				C0FAACD72533967C00ECEC3F /* TermsAndPrivacyViewManager.swift */,
+			);
+			path = TermsAndPrivacy;
+			sourceTree = "<group>";
+		};
+		C0F70F542532C73B0048F303 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				775AAC852402054600B9AF55 /* ResetPasswordViewController.swift */,
+				C0F70F7B2532C9D20048F303 /* ResetPasswordPresenter.swift */,
+				C0FAACDA2533968D00ECEC3F /* ResetPasswordViewManager.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		C0F70F552532C7500048F303 /* InAppSubscriptionModal */ = {
+			isa = PBXGroup;
+			children = (
+				77B45F5A23960F480067FE1C /* InAppSubscriptionModalViewController.swift */,
+				C0F70F7E2532C9F20048F303 /* InAppSubscriptionModalPresenter.swift */,
+				C0FAACDD2533969F00ECEC3F /* InAppSubscriptionModalViewManager.swift */,
+			);
+			path = InAppSubscriptionModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,37 +654,65 @@
 			buildActionMask = 2147483647;
 			files = (
 				7728C34023FB204900E3FC66 /* MoodJournalSelectionViewController.swift in Sources */,
+				C0FAACDE2533969F00ECEC3F /* InAppSubscriptionModalViewManager.swift in Sources */,
 				774D050B236D1E450099426F /* ViewController.swift in Sources */,
 				774F7D8A239D76B3009A69D2 /* TermsAndPrivacyViewController.swift in Sources */,
+				C0FAACC92533962C00ECEC3F /* ArticlesListViewManager.swift in Sources */,
 				773584E823D68C270030FCBF /* ArticlesListViewController.swift in Sources */,
 				779D25F0238387340049CB8D /* AffirmationData.swift in Sources */,
 				773584F723DA8F960030FCBF /* UIView+Fades.swift in Sources */,
 				775AAC862402054600B9AF55 /* ResetPasswordViewController.swift in Sources */,
 				77C4D6192401AFB300590EBC /* JournalEntryData.swift in Sources */,
 				774D0507236D1E450099426F /* AppDelegate.swift in Sources */,
+				C0F70F6A2532C9390048F303 /* ArticlesListPresenter.swift in Sources */,
+				C0F70F5E2532C8C90048F303 /* AffirmationsListPresenter.swift in Sources */,
+				C0F70F8225337DD60048F303 /* MainViewManager.swift in Sources */,
 				77B45F5723945D5A0067FE1C /* DataModel.xcdatamodeld in Sources */,
 				77C4D6142400EA0B00590EBC /* JournalEntryCell.swift in Sources */,
 				77D926BA2389D354007E7DDA /* CategoryAffirmationsViewController.swift in Sources */,
 				C0FF80B1253141C200D83744 /* InfoButtonView.swift in Sources */,
 				779D25E823820FB40049CB8D /* AudioPlayerViewController.swift in Sources */,
+				C0F70F672532C90C0048F303 /* CustomAffirmationPlayerPresenter.swift in Sources */,
 				77536925250D831400466251 /* AES256Crypter.swift in Sources */,
 				773584EE23D7E6160030FCBF /* UIImageView+LoadCacheImage.swift in Sources */,
+				C0F70F6D2532C94A0048F303 /* ArticleDisplayPresenter.swift in Sources */,
 				779D25E623820B030049CB8D /* AffirmationsListViewController.swift in Sources */,
+				C0FAACD82533967C00ECEC3F /* TermsAndPrivacyViewManager.swift in Sources */,
 				773584E623D68AA00030FCBF /* ArticleXMLParser.swift in Sources */,
+				C0FAACC32533960500ECEC3F /* AffirmationBuilderViewManager.swift in Sources */,
 				779D25EB23837CF10049CB8D /* CustomAffirmationsCell.swift in Sources */,
+				C0F70F582532C8A30048F303 /* MainPresenter.swift in Sources */,
 				773584EB23D7DC5F0030FCBF /* ArticleCell.swift in Sources */,
+				C0FAACDB2533968D00ECEC3F /* ResetPasswordViewManager.swift in Sources */,
 				774D0509236D1E450099426F /* SceneDelegate.swift in Sources */,
+				C0FAACD22533965D00ECEC3F /* MoodJournalLoginViewManager.swift in Sources */,
+				C0FAACBD253395DC00ECEC3F /* AffirmationsListViewManager.swift in Sources */,
+				C0F70F642532C8FA0048F303 /* AffirmationBuilderPresenter.swift in Sources */,
 				773584E423D68A590030FCBF /* ArticleData.swift in Sources */,
 				77CDAE02238A550800B561DF /* AffirmationBuilderViewController.swift in Sources */,
 				77448A9723E11FA10029C567 /* Private.swift in Sources */,
+				C0F70F762532C9870048F303 /* MoodJournalEntryFormPresenter.swift in Sources */,
+				C0F70F732532C96F0048F303 /* MoodJournalLoginPresenter.swift in Sources */,
+				C0F70F792532C9A00048F303 /* TermsAndPrivacyPresenter.swift in Sources */,
 				77CDAE04238E06F900B561DF /* CustomAffirmationPlayerViewController.swift in Sources */,
 				779D25EE238386640049CB8D /* RetrieveAffirmations.swift in Sources */,
 				773584F023D7F0150030FCBF /* ArticleDisplayViewController.swift in Sources */,
 				776246AD236D30C4003C2D6A /* AppDelegate+PushNotifications.swift in Sources */,
+				C0FAACCC2533963D00ECEC3F /* ArticleDisplayViewManager.swift in Sources */,
 				7728C34223FB207C00E3FC66 /* MoodJournalLoginViewController.swift in Sources */,
 				773584BE23D3850A0030FCBF /* ListOfAffirmations.swift in Sources */,
+				C0F70F702532C95E0048F303 /* MoodJournalSelectionPresenter.swift in Sources */,
+				C0FAACBA253395C900ECEC3F /* CategoryAffirmationsViewManager.swift in Sources */,
 				77B45F5B23960F480067FE1C /* InAppSubscriptionModalViewController.swift in Sources */,
+				C0F70F7C2532C9D20048F303 /* ResetPasswordPresenter.swift in Sources */,
+				C0F70F5B2532C8B80048F303 /* CategoryAffirmationsPresenter.swift in Sources */,
+				C0FAACC0253395F200ECEC3F /* AudioPlayerViewManager.swift in Sources */,
 				77C4D61124005EC500590EBC /* MoodJournalEntryFormViewController.swift in Sources */,
+				C0F70F7F2532C9F20048F303 /* InAppSubscriptionModalPresenter.swift in Sources */,
+				C0F70F612532C8DC0048F303 /* AudioPlayerPresenter.swift in Sources */,
+				C0FAACD52533966D00ECEC3F /* MoodJournalEntryFormViewManager.swift in Sources */,
+				C0FAACC62533961900ECEC3F /* CustomAffirmationPlayerViewManager.swift in Sources */,
+				C0FAACCF2533964C00ECEC3F /* MoodJournalSelectionViewManager.swift in Sources */,
 				77CDAE07238E0DAD00B561DF /* CustomTrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

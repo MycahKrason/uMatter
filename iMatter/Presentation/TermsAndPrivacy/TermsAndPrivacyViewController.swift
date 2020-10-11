@@ -16,6 +16,7 @@ class TermsAndPrivacyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        TermsAndPrivacyPresenter(vcView: self).presentScene()
         informationDisplay.isUserInteractionEnabled = false
 
         if let title = receivedTitle {

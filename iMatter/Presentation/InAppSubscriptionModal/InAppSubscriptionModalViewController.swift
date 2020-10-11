@@ -13,6 +13,7 @@ class InAppSubscriptionModalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        InAppSubscriptionModalPresenter(vcView: self).presentScene()
         monthlyInAppSubscriptionBtnDisplay.layer.cornerRadius = 10
     }
 

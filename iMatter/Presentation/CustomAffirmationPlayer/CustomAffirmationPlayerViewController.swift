@@ -27,6 +27,7 @@ class CustomAffirmationPlayerViewController: UIViewController, AVAudioPlayerDele
     // swiftlint:disable:next function_body_length
     override func viewDidLoad() {
         super.viewDidLoad()
+        CustomAffirmationPlayerPresenter(vcView: self).presentScene()
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Builder Player"

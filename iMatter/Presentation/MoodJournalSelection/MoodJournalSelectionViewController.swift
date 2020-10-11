@@ -17,8 +17,11 @@ class MoodJournalSelectionViewController: UIViewController, UITableViewDelegate,
     var journalEntryArray = [JournalEntryData]()
     let firestoreDB = Firestore.firestore()
     var infoButton: InfoButtonView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        MoodJournalSelectionPresenter(vcView: self).presentScene()
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Mood Journal"
 

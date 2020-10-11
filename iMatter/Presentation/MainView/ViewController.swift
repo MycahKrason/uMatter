@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         layoutSetup()
+        MainPresenter(vcView: self).presentScene()
     }
 
     override func viewWillAppear(_ animated: Bool) {

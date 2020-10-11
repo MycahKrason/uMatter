@@ -24,6 +24,7 @@ class AffirmationsListViewController: UIViewController, AffirmationsCellDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        AffirmationsListPresenter(vcView: self).presentScene()
         if let appDelegate = appDelegate {
             context = appDelegate.persistentContainer.viewContext
         }

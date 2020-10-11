@@ -25,6 +25,8 @@ class MoodJournalEntryFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        MoodJournalEntryFormPresenter(vcView: self).presentScene()
+
         // Set up UI Corner Radius
         submitBtnDisplay.layer.cornerRadius = 10
         entryTextInput.layer.cornerRadius = 5

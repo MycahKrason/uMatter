@@ -46,6 +46,7 @@ class AffirmationBuilderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        AffirmationBuilderPresenter(vcView: self).presentScene()
         if let appDelegate = appDelegate {
             context = appDelegate.persistentContainer.viewContext
         }

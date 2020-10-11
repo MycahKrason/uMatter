@@ -19,6 +19,7 @@ class CategoryAffirmationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CategoryAffirmationsPresenter(vcView: self).presentScene()
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "IMG_1057 copy"), for: .default)
         title = "Affirmation Tracks"
